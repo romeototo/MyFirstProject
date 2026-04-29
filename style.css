@@ -464,6 +464,94 @@ body {
 .code-string { color: var(--green); }
 
 /* ======================================
+   Banner Section
+   ====================================== */
+
+.banner-section {
+    padding: 20px 0 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.banner-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    /* Animated neon border */
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 217, 255, 0.6),
+        rgba(108, 99, 255, 0.4),
+        rgba(0, 217, 255, 0.2),
+        rgba(108, 99, 255, 0.6)
+    );
+    background-size: 300% 300%;
+    animation: banner-border-glow 4s ease infinite;
+    box-shadow:
+        0 0 30px rgba(0, 217, 255, 0.2),
+        0 0 60px rgba(108, 99, 255, 0.1),
+        0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes banner-border-glow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.banner-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 217, 255, 0.08) 40%,
+        rgba(108, 99, 255, 0.08) 60%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: banner-shimmer 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes banner-shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.profile-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: brightness(0.95) saturate(1.1);
+    position: relative;
+    z-index: 1;
+}
+
+.banner-wrapper:hover .profile-banner {
+    transform: scale(1.01);
+    filter: brightness(1.05) saturate(1.2);
+}
+
+@media (max-width: 768px) {
+    .banner-section {
+        padding: 10px 0 40px;
+    }
+    .banner-wrapper {
+        border-radius: 14px;
+    }
+    .profile-banner {
+        border-radius: 12px;
+    }
+}
+
+/* ======================================
    Sections
    ====================================== */
 
