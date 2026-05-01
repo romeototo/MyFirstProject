@@ -4,7 +4,7 @@
 
 ### Premium Developer Portfolio Website
 
-[![Live Demo](https://img.shields.io/badge/🔗_Live_Demo-6C63FF?style=for-the-badge&logo=google-chrome&logoColor=white)](https://romeototo.github.io/MyFirstProject/)
+[![Live Demo](https://img.shields.io/badge/🔗_Live_Demo-6C63FF?style=for-the-badge&logo=google-chrome&logoColor=white)](https://romeototo.github.io/portfolio-website/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
 <img src="assets/screenshots/preview.png" alt="Portfolio Preview" width="600" />
@@ -42,20 +42,20 @@ A premium personal portfolio website built with pure HTML, CSS, and JavaScript �
 
 ## 🚀 Live Demo
 
-👉 **[romeototo.github.io/MyFirstProject](https://romeototo.github.io/MyFirstProject/)**
+👉 **[romeototo.github.io/portfolio-website](https://romeototo.github.io/portfolio-website/)**
 
 ## 💻 Run Locally
 
 ```bash
-git clone https://github.com/romeototo/MyFirstProject.git
-cd MyFirstProject
+git clone https://github.com/romeototo/portfolio-website.git
+cd portfolio-website
 # Open index.html in your browser
 ```
 
 ## 📂 Project Structure
 
 ```
-MyFirstProject/
+portfolio-website/
 ├── index.html          # Main HTML structure
 ├── style.css           # All styles & design system
 ├── script.js           # Interactive JS (particles, typewriter, etc.)
@@ -74,7 +74,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 **Made with ❤️ by [RoMEoTOTO](https://github.com/romeototo)**
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-6C63FF?style=flat-square&logo=google-chrome&logoColor=white)](https://romeototo.github.io/MyFirstProject/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-6C63FF?style=flat-square&logo=google-chrome&logoColor=white)](https://romeototo.github.io/portfolio-website/)
 [![X](https://img.shields.io/badge/@RoMeoT0T0-000?style=flat-square&logo=x&logoColor=white)](https://x.com/RoMeoT0T0)
 [![GitHub](https://img.shields.io/badge/romeototo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/romeototo)
 
