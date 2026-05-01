@@ -40,6 +40,15 @@ A premium personal portfolio website built with pure HTML, CSS, and JavaScript �
 - **Font:** Google Fonts (Inter)
 - **Hosting:** GitHub Pages
 
+## 🔬 Technical Highlights
+
+This project was built from scratch without relying on heavy frameworks like React or Tailwind, demonstrating a deep understanding of core web technologies:
+
+- **Glassmorphism UI:** Achieved using CSS `backdrop-filter: blur(12px)` combined with semi-transparent RGBA backgrounds and borders to create depth.
+- **CSS Custom Properties (Variables):** Entire design system (colors, spacing, typography) is centralized in `:root` variables, making future theme switching (e.g., Light Mode) trivial.
+- **Intersection Observer API:** Used vanilla JavaScript `IntersectionObserver` for highly performant scroll-reveal animations, triggering CSS class toggles only when elements enter the viewport.
+- **Custom Particle Engine:** The dynamic background particles are generated using pure JavaScript math and DOM manipulation, optimized via `requestAnimationFrame`.
+
 ## 🚀 Live Demo
 
 👉 **[romeototo.github.io/portfolio-website](https://romeototo.github.io/portfolio-website/)**
