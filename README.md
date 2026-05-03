@@ -1,4 +1,5 @@
 <div align="center">
+<i>👉 <a href="README-th.md">🇹🇭 อ่านรายละเอียดภาษาไทย</a></i><br><br>
 
 # 🌐 RoMEoTOTO — Personal Portfolio
 
