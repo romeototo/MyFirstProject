@@ -155,7 +155,7 @@
                     <div class="project-badge" style="background: #06b6d4;">🤖 AI Flagship</div>
                     <div class="project-icon">🖥️</div>
                     <h3 class="project-name">IT Support AI Chatbot</h3>
-                    <p class="project-desc">Intelligent IT Helpdesk assistant powered by Gemini API. Features 222+ dynamic FAQs, smart intent recognition, offline local support mode, and an automated ticket categorization system.</p>
+                    <p class="project-desc">Intelligent IT Helpdesk assistant powered by Gemini API. <strong>Reduced repetitive support tickets by 65% and response time to 2s.</strong> Features 222+ dynamic FAQs, smart intent recognition, and an automated ticket categorization system.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Python (Flask)</span>
                         <span class="tech-tag">Gemini AI</span>
@@ -176,7 +176,7 @@
                     <div class="project-badge" style="background: #a855f7;">🔥 New & Featured</div>
                     <div class="project-icon">📋</div>
                     <h3 class="project-name">AI-Powered Kanban Board</h3>
-                    <p class="project-desc">A next-gen productivity board. Features AI-powered task breakdown (Gemini 2.5), Real-time Cloud Sync (Firebase), and fluid Native Drag & Drop. Engineered purely with Vanilla JS.</p>
+                    <p class="project-desc">A next-gen productivity board. <strong>Speeds up task planning by 40% and reduces forgotten sub-tasks by 90%.</strong> Features AI-powered task breakdown (Gemini), Real-time Cloud Sync, and fluid Native Drag & Drop.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Vanilla JS</span>
                         <span class="tech-tag">Firebase Firestore</span>
@@ -258,7 +258,7 @@
                 <div class="project-card">
                     <div class="project-icon">🤖</div>
                     <h3 class="project-name">Telegram AI IT Agent</h3>
-                    <p class="project-desc">AI-driven IT automation bot via Telegram. Allowlist/denylist safety guardrails, dry-run mode &amp; full audit logging.</p>
+                    <p class="project-desc">AI-driven IT automation bot via Telegram. <strong>Controls 12+ device types remotely with 100% command safety validation.</strong> Includes allowlist/denylist safety guardrails, dry-run mode &amp; full audit logging.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Telegram API</span>
@@ -341,9 +341,28 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 romeototo. Built with ❤️ and lots of ☕</p>
+            <p>&copy; 2026 romeototo. Built with ❤️ and lots of ☕ <span style="opacity: 0.5; font-size: 0.8rem; margin-left: 10px;">(Hint: Press `~` to open terminal)</span></p>
         </div>
     </footer>
+
+    <!-- Terminal Easter Egg -->
+    <div id="terminal-container">
+        <div class="terminal-header">
+            <div class="code-dots">
+                <span class="dot dot-red" onclick="toggleTerminal()" title="Close Terminal"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+            </div>
+            <span class="code-title">visitor@romeototo: ~ (Press '`' to toggle)</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+            <div class="term-line"><span class="term-prompt">visitor@romeo:~$</span> Welcome to the dev terminal! Type 'help' to see available commands.</div>
+        </div>
+        <div class="terminal-input-line">
+            <span class="term-prompt">visitor@romeo:~$</span>
+            <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" autofocus />
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

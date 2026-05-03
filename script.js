@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initScrollReveal();
     initMobileNav();
+    initProjectCardsGlow();
+    initTerminal();
 });
 
 // ======================================
@@ -170,3 +172,103 @@ function initScrollReveal() {
 
     elements.forEach(el => observer.observe(el));
 }
+
+// ======================================
+// Glassmorphism Project Cards Glow
+// ======================================
+
+function initProjectCardsGlow() {
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+}
+
+// ======================================
+// Terminal Easter Egg
+// ======================================
+
+function toggleTerminal() {
+    const term = document.getElementById('terminal-container');
+    const input = document.getElementById('terminal-input');
+    if (!term) return;
+    
+    term.classList.toggle('terminal-visible');
+    if (term.classList.contains('terminal-visible')) {
+        setTimeout(() => input.focus(), 100);
+    } else {
+        input.blur();
+    }
+}
+
+function initTerminal() {
+    const input = document.getElementById('terminal-input');
+    const body = document.getElementById('terminal-body');
+    if (!input || !body) return;
+
+    // Toggle with ~ (Backquote) or Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === '`' || e.key === '~') {
+            e.preventDefault();
+            toggleTerminal();
+        } else if (e.key === 'Escape') {
+            const term = document.getElementById('terminal-container');
+            if (term && term.classList.contains('terminal-visible')) {
+                toggleTerminal();
+            }
+        }
+    });
+
+    // Handle commands
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const cmd = input.value.trim().toLowerCase();
+            if (!cmd) return;
+            
+            // Add typed command to history
+            const cmdLine = document.createElement('div');
+            cmdLine.className = 'term-line';
+            cmdLine.innerHTML = `<span class="term-prompt">visitor@romeo:~$</span> ${input.value}`;
+            body.appendChild(cmdLine);
+            
+            input.value = '';
+            
+            // Process command
+            const outputLine = document.createElement('div');
+            outputLine.className = 'term-line term-output';
+            
+            switch (cmd) {
+                case 'help':
+                    outputLine.innerHTML = "Available commands:<br>&nbsp;whoami<br>&nbsp;skills<br>&nbsp;hire_romeo<br>&nbsp;clear<br>&nbsp;exit";
+                    break;
+                case 'whoami':
+                    outputLine.innerHTML = "visitor - You are awesome for finding this! Enjoy exploring my portfolio.";
+                    break;
+                case 'skills':
+                    outputLine.innerHTML = "Python, JavaScript, React, Tailwind, AI Automation, Prompt Engineering, Web3...";
+                    break;
+                case 'hire_romeo':
+                    outputLine.innerHTML = "Great choice! Email me or DM me on X (@RoMeoT0T0) to get started. 🚀";
+                    break;
+                case 'clear':
+                    body.innerHTML = '';
+                    return;
+                case 'exit':
+                    toggleTerminal();
+                    return;
+                default:
+                    outputLine.innerHTML = `Command not found: ${cmd}. Type 'help' for available commands.`;
+            }
+            
+            body.appendChild(outputLine);
+            body.scrollTop = body.scrollHeight;
+        }
+    });
+}
+
