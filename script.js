@@ -171,7 +171,7 @@ function initMobileNav() {
 
 function initScrollReveal() {
   const elements = document.querySelectorAll(
-    ".about-card, .project-card, .skill-category",
+    ".about-card, .project-card, .skill-category, .process-card",
   );
 
   if (!elements.length) return;

@@ -399,6 +399,37 @@ body {
   animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 34px;
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.proof-item {
+  padding: 14px 12px;
+  border: 1px solid rgba(108, 99, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(17, 17, 24, 0.46);
+}
+
+.proof-item strong {
+  display: block;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.proof-item span {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -671,6 +702,14 @@ body {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   letter-spacing: 0;
+}
+
+.section-intro {
+  max-width: 680px;
+  margin: 18px auto 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
 /* ======================================
@@ -976,7 +1015,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 .tech-tag {
@@ -992,6 +1031,24 @@ body {
 .project-links {
   display: flex;
   gap: 12px;
+  margin-top: 24px;
+}
+
+.project-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.project-proof span {
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
 }
 
 .project-link {
@@ -1111,6 +1168,51 @@ body {
 }
 
 /* ======================================
+   Process Section
+   ====================================== */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.process-card {
+  padding: 30px 26px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.process-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow);
+}
+
+.process-step {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.process-card h3 {
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.process-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ======================================
    Contact Section
    ====================================== */
 
@@ -1123,8 +1225,31 @@ body {
 .contact-text {
   font-size: 1.15rem;
   color: var(--text-secondary);
-  margin-bottom: 40px;
+  margin-bottom: 22px;
   line-height: 1.8;
+}
+
+.contact-brief {
+  margin-bottom: 36px;
+  padding: 14px 16px;
+  border: 1px solid rgba(0, 217, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(0, 217, 255, 0.055);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.contact-brief span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.contact-brief strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .contact-links {
@@ -1291,7 +1416,8 @@ body {
 /* Scroll reveal */
 .about-card,
 .project-card,
-.skill-category {
+.skill-category,
+.process-card {
   opacity: 0;
   transform: translateY(40px);
   transition:
@@ -1301,7 +1427,8 @@ body {
 
 .about-card.visible,
 .project-card.visible,
-.skill-category.visible {
+.skill-category.visible,
+.process-card.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1371,6 +1498,11 @@ body {
   .case-study dl {
     grid-template-columns: 1fr;
   }
+
+  .proof-strip,
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1384,7 +1516,12 @@ body {
 
   .about-grid,
   .projects-grid,
-  .skills-grid {
+  .skills-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-strip {
     grid-template-columns: 1fr;
   }
 
