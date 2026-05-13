@@ -85,6 +85,7 @@ body {
 
 .bg-glow {
   position: fixed;
+  display: none;
   border-radius: 50%;
   filter: blur(120px);
   opacity: 0.4;
@@ -251,6 +252,11 @@ body {
   background: rgba(108, 99, 255, 0.1);
 }
 
+.nav-links .nav-link[target="_blank"] {
+  color: #c084fc;
+  font-weight: 600;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -382,6 +388,10 @@ body {
   animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
+.muted-inline {
+  color: var(--text-muted);
+}
+
 .hero-cta {
   display: flex;
   gap: 16px;
@@ -424,6 +434,18 @@ body {
 .btn-ghost:hover {
   border-color: var(--accent);
   background: rgba(108, 99, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.btn-resume {
+  background: transparent;
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.btn-resume:hover {
+  border-color: #c084fc;
+  background: rgba(168, 85, 247, 0.1);
   transform: translateY(-2px);
 }
 
@@ -522,7 +544,7 @@ body {
 
 .banner-wrapper {
   position: relative;
-  border-radius: 20px;
+  border-radius: 8px;
   overflow: hidden;
   /* Animated neon border */
   padding: 2px;
@@ -557,7 +579,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 20px;
+  border-radius: 8px;
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -584,13 +606,17 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 18px;
+  border-radius: 6px;
   transition:
     transform 0.4s ease,
     filter 0.4s ease;
   filter: brightness(0.95) saturate(1.1);
   position: relative;
   z-index: 1;
+}
+
+.banner-wrapper picture {
+  display: block;
 }
 
 .banner-wrapper:hover .profile-banner {
@@ -603,10 +629,10 @@ body {
     padding: 10px 0 40px;
   }
   .banner-wrapper {
-    border-radius: 14px;
+    border-radius: 8px;
   }
   .profile-banner {
-    border-radius: 12px;
+    border-radius: 6px;
   }
 }
 
@@ -644,7 +670,7 @@ body {
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 /* ======================================
@@ -660,7 +686,7 @@ body {
 .about-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 36px 28px;
   transition: var(--transition);
   backdrop-filter: blur(10px);
@@ -704,7 +730,7 @@ body {
 .project-card {
   background: rgba(17, 17, 24, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 32px 28px;
   transition:
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
@@ -789,6 +815,16 @@ body {
   margin-bottom: 16px;
 }
 
+.badge-cyan {
+  background: #06b6d4;
+  color: white;
+}
+
+.badge-purple {
+  background: #a855f7;
+  color: white;
+}
+
 .project-icon {
   font-size: 2.2rem;
   margin-bottom: 16px;
@@ -840,7 +876,39 @@ body {
   transition: var(--transition);
 }
 
-.project-link:hover {
+.project-link-primary {
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.project-link-primary:hover {
+  color: white;
+  transform: translateY(-1px);
+}
+
+.link-cyan {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+}
+
+.link-purple {
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+}
+
+.link-indigo {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+.link-pink {
+  background: linear-gradient(135deg, #f43f5e, #ec4899);
+}
+
+.link-green {
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+}
+
+.project-link:not(.project-link-primary):hover {
   color: var(--accent);
 }
 
@@ -857,7 +925,7 @@ body {
 .skill-category {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 32px 28px;
   backdrop-filter: blur(10px);
   transition: var(--transition);
@@ -1064,6 +1132,18 @@ body {
   z-index: 1;
 }
 
+.footer-hint {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+}
+
 /* ======================================
    Animations
    ====================================== */
@@ -1183,5 +1263,29 @@ body {
   .btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .footer-hint {
+    display: block;
+    margin: 8px 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  #particles {
+    display: none;
   }
 }

@@ -3,7 +3,13 @@
 // ======================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  initParticles();
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (!prefersReducedMotion) {
+    initParticles();
+  }
   initTypewriter();
   initNavbar();
   initScrollReveal();
@@ -49,12 +55,16 @@ function initTypewriter() {
   if (!element) return;
 
   const roles = [
-    "Builder & Creator 🚀",
-    "Game Developer 🎮",
-    "AI Enthusiast 🤖",
-    "Automation Engineer ⚙️",
-    "Open Source Contributor 💜",
+    "AI Tool Builder",
+    "Browser Game Developer",
+    "Automation Engineer",
+    "Open Source Maker",
   ];
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    element.textContent = roles[0];
+    return;
+  }
 
   let roleIndex = 0;
   let charIndex = 0;
@@ -123,7 +133,12 @@ function initNavbar() {
 
           // Close mobile nav
           const navLinks = document.getElementById("navLinks");
+          const navToggle = document.getElementById("navToggle");
           if (navLinks) navLinks.classList.remove("active");
+          if (navToggle) {
+            navToggle.classList.remove("active");
+            navToggle.setAttribute("aria-expanded", "false");
+          }
         }
       }
     });
@@ -143,6 +158,10 @@ function initMobileNav() {
   toggle.addEventListener("click", () => {
     links.classList.toggle("active");
     toggle.classList.toggle("active");
+    toggle.setAttribute(
+      "aria-expanded",
+      String(links.classList.contains("active")),
+    );
   });
 }
 
@@ -156,6 +175,11 @@ function initScrollReveal() {
   );
 
   if (!elements.length) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    elements.forEach((el) => el.classList.add("visible"));
+    return;
+  }
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -209,9 +233,9 @@ function toggleTerminal() {
   if (!term) return;
 
   term.classList.toggle("terminal-visible");
-  if (term.classList.contains("terminal-visible")) {
+  if (input && term.classList.contains("terminal-visible")) {
     setTimeout(() => input.focus(), 100);
-  } else {
+  } else if (input) {
     input.blur();
   }
 }
@@ -219,7 +243,18 @@ function toggleTerminal() {
 function initTerminal() {
   const input = document.getElementById("terminal-input");
   const body = document.getElementById("terminal-body");
+  const closeButton = document.querySelector(".terminal-header .dot-red");
   if (!input || !body) return;
+
+  if (closeButton) {
+    closeButton.addEventListener("click", toggleTerminal);
+    closeButton.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleTerminal();
+      }
+    });
+  }
 
   // Toggle with ~ (Backquote) or Escape
   document.addEventListener("keydown", (e) => {
