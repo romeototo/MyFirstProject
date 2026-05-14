@@ -21,11 +21,14 @@ Portfolio หลักสำหรับผลงาน AI tools, automation, we
 - BKK Pattaya Private Taxi: landing page และ booking flow สำหรับบริการรถในไทย
 - Monster Tapper: clicker game พร้อม upgrades และ boss stages
 - Telegram AI IT Agent: automation agent แนว safety-first พร้อม dry-run และ audit-log concept
+- CCTV Playback Workspace: private case study แบบ sanitized สำหรับ review กล้องหลายตัวและ export clip
 
 ## Case Studies
 
 - `case-studies/it-support-chatbot/`
 - `case-studies/ai-kanban-board/`
+- `case-studies/bkk-pattaya-taxi/`
+- `case-studies/cctv-playback-workspace/`
 
 แต่ละหน้าอธิบาย problem, build approach, result และสิ่งที่คนดูควร inspect ใน demo/source code
 
@@ -62,6 +65,8 @@ portfolio-website/
 │   └── screenshots/
 ├── case-studies/
 │   ├── ai-kanban-board/
+│   ├── bkk-pattaya-taxi/
+│   ├── cctv-playback-workspace/
 │   └── it-support-chatbot/
 └── .github/workflows/code-quality.yml
 ```

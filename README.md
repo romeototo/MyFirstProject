@@ -20,11 +20,14 @@ Live site: https://romeototo.github.io/portfolio-website/
 - BKK Pattaya Private Taxi: SEO landing page and booking flow for a Thailand taxi service.
 - Monster Tapper: playable clicker game with upgrades and boss stages.
 - Telegram AI IT Agent: safety-first automation agent with dry-run and audit-log concepts.
+- CCTV Playback Workspace: sanitized private case study for multi-camera review and clip export.
 
 ## Case Studies
 
 - `case-studies/it-support-chatbot/`
 - `case-studies/ai-kanban-board/`
+- `case-studies/bkk-pattaya-taxi/`
+- `case-studies/cctv-playback-workspace/`
 
 Each case study explains the problem, build approach, result, and what a visitor should inspect in the demo or source code.
 
@@ -61,6 +64,8 @@ portfolio-website/
 │   └── screenshots/
 ├── case-studies/
 │   ├── ai-kanban-board/
+│   ├── bkk-pattaya-taxi/
+│   ├── cctv-playback-workspace/
 │   └── it-support-chatbot/
 └── .github/workflows/code-quality.yml
 ```
