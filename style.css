@@ -682,6 +682,10 @@ body {
   z-index: 1;
 }
 
+.section-compact {
+  padding: 88px 0;
+}
+
 .section-dark {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 120px),
@@ -717,6 +721,57 @@ body {
   color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.75;
+}
+
+/* ======================================
+   Start Here Section
+   ====================================== */
+
+.start-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.start-card {
+  display: flex;
+  min-height: 220px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 26px;
+  border: 1px solid rgba(108, 99, 255, 0.22);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent),
+    rgba(17, 17, 24, 0.58);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.start-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 217, 255, 0.45);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+}
+
+.start-card span {
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.start-card strong {
+  margin-top: auto;
+  color: var(--text-primary);
+  font-size: 1.28rem;
+  line-height: 1.25;
+}
+
+.start-card p {
+  margin-top: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
 }
 
 /* ======================================
@@ -865,17 +920,6 @@ body {
   background:
     linear-gradient(135deg, rgba(0, 217, 255, 0.16), rgba(108, 99, 255, 0.24)),
     linear-gradient(160deg, #0a0a0f, #111827);
-}
-
-.visual-cctv {
-  background:
-    radial-gradient(
-      circle at 20% 18%,
-      rgba(0, 217, 255, 0.34),
-      transparent 28%
-    ),
-    radial-gradient(circle at 84% 22%, rgba(0, 255, 136, 0.2), transparent 26%),
-    linear-gradient(135deg, rgba(8, 15, 24, 0.98), rgba(17, 28, 40, 0.94));
 }
 
 .project-card::after {
@@ -1539,47 +1583,10 @@ body {
     0 0 0 1px rgba(108, 99, 255, 0.08);
 }
 
-.case-visual {
-  display: flex;
-  min-height: 420px;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 34px;
-  background:
-    radial-gradient(
-      circle at 18% 20%,
-      rgba(0, 217, 255, 0.28),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 82% 10%,
-      rgba(108, 99, 255, 0.35),
-      transparent 28%
-    ),
-    linear-gradient(135deg, rgba(10, 14, 24, 0.98), rgba(21, 24, 36, 0.92));
-}
-
-.case-visual span {
-  width: fit-content;
-  margin-bottom: 14px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: rgba(0, 217, 255, 0.1);
-  color: var(--cyan);
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-}
-
-.case-visual strong {
-  color: var(--text-primary);
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  line-height: 1.02;
-}
-
-.case-visual p {
-  max-width: 520px;
-  margin-top: 18px;
-  color: var(--text-secondary);
+.case-screenshot-wide {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: contain;
 }
 
 .case-metrics {
@@ -1783,7 +1790,8 @@ body {
   .process-grid,
   .case-metrics,
   .case-grid,
-  .inspect-list {
+  .inspect-list,
+  .start-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1807,7 +1815,8 @@ body {
   .inspect-list,
   .projects-grid,
   .skills-grid,
-  .process-grid {
+  .process-grid,
+  .start-grid {
     grid-template-columns: 1fr;
   }
 
