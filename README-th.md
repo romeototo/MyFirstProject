@@ -1,8 +1,22 @@
+<div align="center">
+
 # RoMEoTOTO Portfolio
+
+<p>
+  <a href="https://github.com/romeototo/portfolio-website/releases"><img src="https://img.shields.io/github/v/release/romeototo/portfolio-website?style=for-the-badge" alt="Release" /></a>
+  <a href="https://github.com/romeototo/portfolio-website/actions"><img src="https://img.shields.io/github/actions/workflow/status/romeototo/portfolio-website/code-quality.yml?style=for-the-badge&label=Code_Quality" alt="Code Quality" /></a>
+  <a href="https://romeototo.github.io/portfolio-website/"><img src="https://img.shields.io/badge/🚀_Live_Demo-GitHub_Pages-6366f1?style=for-the-badge" alt="Live Demo" /></a>
+  <img src="https://img.shields.io/badge/Tech-HTML5_|_CSS3_|_VanillaJS-3776ab?style=for-the-badge&logo=javascript&logoColor=white" alt="Tech Stack" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge" alt="License" /></a>
+</p>
+
+<i>👉 <a href="README.md">🇬🇧 Read in English</a></i><br><br>
 
 Portfolio หลักสำหรับผลงาน AI tools, automation, web products และ browser games
 
-เว็บจริง: https://romeototo.github.io/portfolio-website/
+👉 **[เยี่ยมชมพอร์ตโฟลิโอได้ที่นี่](https://romeototo.github.io/portfolio-website/)**
+
+</div>
 
 ## เว็บนี้นำเสนออะไร
 
