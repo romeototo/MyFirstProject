@@ -1,14 +1,15 @@
 # RoMEoTOTO Portfolio
 
-Personal portfolio for practical AI tools, automation projects, and browser games.
+Main public portfolio hub for practical AI tools, automation projects, web products, and browser games.
 
 Live site: https://romeototo.github.io/portfolio-website/
 
 ## What This Portfolio Shows
 
-- Featured AI and automation demos with source links
+- Featured active projects with demo and source links
 - Real project screenshots instead of generic placeholders
 - Case-study pages for the strongest projects
+- A cleaner project set that excludes archived experiments and private templates
 - GitHub Pages deployment with format checks
 - Responsive static site built with HTML, CSS, and JavaScript
 
@@ -16,9 +17,8 @@ Live site: https://romeototo.github.io/portfolio-website/
 
 - IT Support AI Chatbot: Gemini-powered helpdesk assistant with FAQ routing and ticket capture.
 - AI-Powered Kanban Board: AI task breakdown with drag-and-drop planning and cloud sync.
-- Rialo Network Tycoon: playable Web3-themed idle game.
+- BKK Pattaya Private Taxi: SEO landing page and booking flow for a Thailand taxi service.
 - Monster Tapper: playable clicker game with upgrades and boss stages.
-- Developer Dashboard: personal command center with API-backed stats.
 - Telegram AI IT Agent: safety-first automation agent with dry-run and audit-log concepts.
 
 ## Case Studies

@@ -1,14 +1,15 @@
 # RoMEoTOTO Portfolio
 
-Portfolio ส่วนตัวสำหรับผลงาน AI tools, automation และ browser games
+Portfolio หลักสำหรับผลงาน AI tools, automation, web products และ browser games
 
 เว็บจริง: https://romeototo.github.io/portfolio-website/
 
 ## เว็บนี้นำเสนออะไร
 
-- โปรเจกต์ AI และ automation พร้อมลิงก์ demo/source
+- โปรเจกต์ที่ยัง active พร้อมลิงก์ demo/source
 - ภาพจริงของโปรเจกต์ แทน placeholder ทั่วไป
 - หน้า case study สำหรับโปรเจกต์เด่น
+- ชุดโปรเจกต์ที่คัดแล้ว ไม่ปน repo ที่ archive หรือ template ส่วนตัว
 - Deploy ผ่าน GitHub Pages
 - ตรวจ format ด้วย GitHub Actions
 - สร้างด้วย HTML, CSS และ JavaScript แบบ static site
@@ -17,9 +18,8 @@ Portfolio ส่วนตัวสำหรับผลงาน AI tools, autom
 
 - IT Support AI Chatbot: helpdesk assistant ที่ใช้ Gemini พร้อม FAQ routing และ ticket capture
 - AI-Powered Kanban Board: board วางแผนงานพร้อม AI task breakdown และ cloud sync
-- Rialo Network Tycoon: browser game แนว idle tycoon ธีม Web3
+- BKK Pattaya Private Taxi: landing page และ booking flow สำหรับบริการรถในไทย
 - Monster Tapper: clicker game พร้อม upgrades และ boss stages
-- Developer Dashboard: dashboard ส่วนตัวพร้อม API-backed stats
 - Telegram AI IT Agent: automation agent แนว safety-first พร้อม dry-run และ audit-log concept
 
 ## Case Studies

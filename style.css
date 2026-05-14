@@ -846,21 +846,6 @@ body {
   line-height: 1.2;
 }
 
-.visual-rialo {
-  background:
-    radial-gradient(
-      circle at 18% 25%,
-      rgba(0, 255, 136, 0.35),
-      transparent 26%
-    ),
-    radial-gradient(
-      circle at 80% 15%,
-      rgba(108, 99, 255, 0.45),
-      transparent 30%
-    ),
-    linear-gradient(135deg, rgba(12, 18, 28, 0.98), rgba(43, 27, 83, 0.92));
-}
-
 .visual-monster {
   background:
     radial-gradient(
@@ -1652,7 +1637,6 @@ body {
 
 /* Scroll reveal */
 .about-card,
-.project-card,
 .skill-category,
 .process-card {
   opacity: 0;
@@ -1663,7 +1647,6 @@ body {
 }
 
 .about-card.visible,
-.project-card.visible,
 .skill-category.visible,
 .process-card.visible {
   opacity: 1;
