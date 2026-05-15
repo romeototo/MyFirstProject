@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
   initProjectCardsGlow();
   initTerminal();
+  initBackToTop();
 });
 
 // ======================================
@@ -317,5 +318,29 @@ function initTerminal() {
       body.appendChild(outputLine);
       body.scrollTop = body.scrollHeight;
     }
+  });
+}
+
+// ======================================
+// Back to Top Button
+// ======================================
+
+function initBackToTop() {
+  const backToTopBtn = document.getElementById("backToTop");
+  if (!backToTopBtn) return;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add("visible");
+    } else {
+      backToTopBtn.classList.remove("visible");
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
 }
