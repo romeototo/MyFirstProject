@@ -16,19 +16,24 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../style.css" />
+    <script src="../../script.js" defer></script>
   </head>
   <body class="case-page">
+    <div id="particles" aria-hidden="true"></div>
     <main class="case-shell">
-      <nav class="case-nav" aria-label="Case study navigation">
-        <a href="../../#process">Back to portfolio</a>
-        <a href="../../#contact">Discuss similar work</a>
+      <nav class="case-nav" aria-label="Case study navigation" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div style="display: flex; gap: 20px;">
+          <a href="../../#process" data-th="กลับหน้าหลัก">Back to portfolio</a>
+          <a href="../../#contact" data-th="พูดคุยโปรเจกต์คล้ายกัน">Discuss similar work</a>
+        </div>
+        <a href="javascript:void(0);" class="nav-link lang-toggle" aria-label="Toggle language to Thai">EN / <span>TH</span></a>
       </nav>
 
       <section class="case-hero">
         <div>
           <span class="section-tag">// private case study</span>
-          <h1>CCTV Playback Workspace</h1>
-          <p>
+          <h1 data-th="ระบบดูและจัดการกล้องวงจรปิด">CCTV Playback Workspace</h1>
+          <p data-th="กรณีศึกษาฉบับจำลองของระบบปฏิบัติการส่วนตัว สำหรับดูภาพจากกล้องหลายตัว ค้นหาตามเวลา ดูพรีวิว และดาวน์โหลดคลิปเพื่อใช้เป็นหลักฐาน">
             A sanitized overview of a private operator workspace for reviewing
             multi-camera footage, filtering by time, previewing clips, and
             exporting evidence-ready video segments.
@@ -37,6 +42,7 @@
             <a
               href="../../#contact"
               class="project-link project-link-primary link-cyan"
+              data-th="พูดคุยโปรเจกต์คล้ายกัน"
               >Discuss similar work</a
             >
           </div>
@@ -52,41 +58,41 @@
 
       <section class="case-metrics" aria-label="Project summary">
         <div>
-          <strong>Use case</strong>
-          <span>Local CCTV review workflow</span>
+          <strong data-th="จุดประสงค์">Use case</strong>
+          <span data-th="ระบบตรวจสอบวงจรปิดภายใน">Local CCTV review workflow</span>
         </div>
         <div>
-          <strong>Core loop</strong>
-          <span>Find footage to preview/export</span>
+          <strong data-th="ขั้นตอนหลัก">Core loop</strong>
+          <span data-th="ค้นหา -> พรีวิว -> ดาวน์โหลด">Find footage to preview/export</span>
         </div>
         <div>
-          <strong>Disclosure</strong>
-          <span>Sanitized; source remains private</span>
+          <strong data-th="การเปิดเผยข้อมูล">Disclosure</strong>
+          <span data-th="ข้อมูลจำลอง (ซอร์สโค้ดเป็นความลับ)">Sanitized; source remains private</span>
         </div>
       </section>
 
       <section class="case-section">
-        <h2>What needed to improve</h2>
+        <h2 data-th="ปัญหาที่ต้องแก้ไข">What needed to improve</h2>
         <div class="case-grid">
           <div class="case-panel">
-            <h3>Problem</h3>
-            <p>
+            <h3 data-th="ปัญหา">Problem</h3>
+            <p data-th="ผู้ปฏิบัติงานต้องการวิธีค้นหาภาพจากกล้องหลายตัวที่รวดเร็วขึ้น โดยไม่ต้องไล่เปิดโฟลเดอร์ทีละอัน หรือทำขั้นตอนการ Export ซ้ำๆ">
               Operators needed a faster way to locate footage across several
               cameras without manually hunting through folders, guessing time
               windows, or repeating export steps.
             </p>
           </div>
           <div class="case-panel">
-            <h3>Build</h3>
-            <p>
+            <h3 data-th="สิ่งที่สร้าง">Build</h3>
+            <p data-th="ระบบเน้นที่การฟิลเตอร์วัน/เวลา เลือกล้อง ดูพรีวิว และดาวน์โหลดวิดีโอรวม โดยออกแบบให้ทำงานแบบ Local-first บนเครื่องของผู้ปฏิบัติงานได้เลย">
               The workspace focuses on day/time filtering, camera selection,
               preview playback, merged clip export, and a local-first workflow
               that can run on the operator machine.
             </p>
           </div>
           <div class="case-panel">
-            <h3>Result</h3>
-            <p>
+            <h3 data-th="ผลลัพธ์">Result</h3>
+            <p data-th="กรณีศึกษานี้แสดงให้เห็นถึงความสามารถในการพัฒนาระบบอัตโนมัติระดับปฏิบัติการ โดยไม่เปิดเผยตำแหน่งกล้อง รหัสผ่าน หรือซอร์สโค้ดที่เป็นความลับ">
               The case study demonstrates operational automation experience
               without exposing camera locations, internal paths, recordings, or
               private repository details.
@@ -96,29 +102,31 @@
       </section>
 
       <section class="case-section">
-        <h2>What to inspect</h2>
+        <h2 data-th="สิ่งที่น่าสนใจในโปรเจกต์นี้">What to inspect</h2>
         <div class="inspect-list">
           <div>
-            <strong>Workflow design</strong>
-            <span
+            <strong data-th="การออกแบบ Workflow">Workflow design</strong>
+            <span data-th="ดูวิธีแปลงขั้นตอนการทำงานแบบแมนนวลให้เป็นระบบ"
               >Review how the case maps a manual review process into
               steps.</span
             >
           </div>
           <div>
-            <strong>Operator ergonomics</strong>
-            <span>Look for fast filtering, preview, and export decisions.</span>
+            <strong data-th="ความสะดวกของผู้ใช้">Operator ergonomics</strong>
+            <span data-th="เน้นความรวดเร็วในการกรองข้อมูล พรีวิว และตัดสินใจดาวน์โหลด"
+              >Look for fast filtering, preview, and export decisions.</span
+            >
           </div>
           <div>
-            <strong>Privacy boundary</strong>
-            <span
+            <strong data-th="การรักษาความลับ">Privacy boundary</strong>
+            <span data-th="สังเกตการคัดกรองข้อมูลที่ไม่เปิดเผยต่อสาธารณะ"
               >Note what is intentionally excluded from the public
               version.</span
             >
           </div>
           <div>
-            <strong>Reusable pattern</strong>
-            <span
+            <strong data-th="รูปแบบที่นำไปใช้ซ้ำได้">Reusable pattern</strong>
+            <span data-th="รูปแบบนี้สามารถนำไปประยุกต์ใช้กับเครื่องมือปฏิบัติการอื่นๆ ได้"
               >Apply the same approach to other local operational tools.</span
             >
           </div>

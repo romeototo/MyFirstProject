@@ -16,24 +16,30 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../style.css" />
+    <script src="../../script.js" defer></script>
   </head>
   <body class="case-page">
+    <div id="particles" aria-hidden="true"></div>
     <main class="case-shell">
-      <nav class="case-nav" aria-label="Case study navigation">
-        <a href="../../#projects">Back to portfolio</a>
-        <a
-          href="https://romeototo.github.io/it-support-chatbot/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Live demo</a
-        >
+      <nav class="case-nav" aria-label="Case study navigation" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div style="display: flex; gap: 20px;">
+          <a href="../../#projects" data-th="กลับหน้าหลัก">Back to portfolio</a>
+          <a
+            href="https://romeototo.github.io/it-support-chatbot/"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-th="ดูตัวอย่างการใช้งาน"
+            >Live demo</a
+          >
+        </div>
+        <a href="javascript:void(0);" class="nav-link lang-toggle" aria-label="Toggle language to Thai">EN / <span>TH</span></a>
       </nav>
 
       <section class="case-hero">
         <div>
           <span class="section-tag">// case study</span>
-          <h1>IT Support AI Chatbot</h1>
-          <p>
+          <h1 data-th="แชทบอท AI ฝ่ายไอทีซัพพอร์ต">IT Support AI Chatbot</h1>
+          <p data-th="ผู้ช่วย AI ประจำ Helpdesk ที่ทำงานด้วย Gemini เปลี่ยนคำถามซ้ำซากให้เป็นคำตอบแบบอัตโนมัติ และช่วยลดภาระการรับเรื่องแจ้งซ่อม">
             A Gemini-powered helpdesk assistant built to turn repeated support
             questions into fast self-service answers and cleaner ticket intake.
           </p>
@@ -43,6 +49,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="project-link project-link-primary link-cyan"
+              data-th="เปิดตัวอย่างการใช้งาน"
               >Open live demo</a
             >
             <a
@@ -50,6 +57,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="project-link"
+              data-th="ดูซอร์สโค้ด"
               >Source code</a
             >
           </div>
@@ -65,41 +73,41 @@
 
       <section class="case-metrics" aria-label="Project summary">
         <div>
-          <strong>Use case</strong>
-          <span>Internal IT self-service</span>
+          <strong data-th="จุดประสงค์">Use case</strong>
+          <span data-th="ระบบช่วยเหลือด้านไอทีภายในองค์กร">Internal IT self-service</span>
         </div>
         <div>
-          <strong>Core loop</strong>
-          <span>Question to FAQ answer or ticket</span>
+          <strong data-th="ขั้นตอนหลัก">Core loop</strong>
+          <span data-th="ถามคำถาม -> หาคำตอบ FAQ -> สร้างตั๋วแจ้งซ่อม">Question to FAQ answer or ticket</span>
         </div>
         <div>
-          <strong>Stack</strong>
+          <strong data-th="เทคโนโลยี">Stack</strong>
           <span>Flask, Gemini AI, JavaScript</span>
         </div>
       </section>
 
       <section class="case-section">
-        <h2>What needed to improve</h2>
+        <h2 data-th="ปัญหาที่ต้องแก้ไข">What needed to improve</h2>
         <div class="case-grid">
           <div class="case-panel">
-            <h3>Problem</h3>
-            <p>
+            <h3 data-th="ปัญหา">Problem</h3>
+            <p data-th="คำถามซ้ำๆ เช่น เครื่องปริ้นท์เสีย, Wi-Fi หลุด, ต่อ VPN ไม่ได้ ทำให้ทีมไอทีต้องเสียเวลาตอบ คำตอบแรกที่ผู้ใช้ได้รับควรจะรวดเร็ว ชัดเจน และส่งต่อเรื่องให้คนได้ง่ายถ้ายังไม่จบ">
               Common printer, Wi-Fi, VPN, password, and email questions create
               repetitive work for IT teams. The useful first answer needs to be
               quick, clear, and easy to escalate when it is not enough.
             </p>
           </div>
           <div class="case-panel">
-            <h3>Build</h3>
-            <p>
+            <h3 data-th="สิ่งที่สร้าง">Build</h3>
+            <p data-th="ตัวต้นแบบระบบแยกหมวดหมู่คำถามซ้ำๆ ตรวจจับเจตนา และใช้ Gemini AI ในการตอบกลับพร้อมคำแนะนำที่เป็นระบบ หากยังไม่จบเรื่อง ระบบจะเก็บข้อมูลเบื้องต้นเพื่อเปิดตั๋วแจ้งซ่อมทันที">
               The prototype groups recurring questions, routes intents, and uses
               Gemini AI to respond with structured support guidance. When the
               issue needs follow-up, the flow captures ticket context.
             </p>
           </div>
           <div class="case-panel">
-            <h3>Result</h3>
-            <p>
+            <h3 data-th="ผลลัพธ์">Result</h3>
+            <p data-th="เดโม่ระบบผู้ช่วยสนับสนุนที่สามารถใช้งานและตรวจสอบได้จริง ทั้งเรื่องการจัดการ FAQ, การส่งต่อ Ticket, UI รองรับภาษาไทย และซอร์สโค้ดที่สามารถเข้ามาดูได้เลย">
               The demo shows a practical support assistant that can be inspected
               quickly: FAQ routing, ticket capture, Thai support UI, and source
               code are all visible from the portfolio.
@@ -109,28 +117,23 @@
       </section>
 
       <section class="case-section">
-        <h2>What to inspect</h2>
+        <h2 data-th="สิ่งที่น่าสนใจในโปรเจกต์นี้">What to inspect</h2>
         <div class="inspect-list">
           <div>
-            <strong>FAQ routing</strong>
-            <span>Check how common issues are grouped before escalation.</span>
+            <strong data-th="ระบบแยก FAQ">FAQ routing</strong>
+            <span data-th="ดูว่าคำถามซ้ำๆ ถูกจัดกลุ่มอย่างไรก่อนจะถูกส่งต่อให้คน">Check how common issues are grouped before escalation.</span>
           </div>
           <div>
-            <strong>Ticket context</strong>
-            <span>Look for the handoff details a support team would need.</span>
+            <strong data-th="ข้อมูล Ticket">Ticket context</strong>
+            <span data-th="ดูข้อมูลเบื้องต้นที่ส่งต่อให้ทีมซัพพอร์ต">Look for the handoff details a support team would need.</span>
           </div>
           <div>
-            <strong>Thai support flow</strong>
-            <span
-              >Verify the UI works for practical local support questions.</span
-            >
+            <strong data-th="รองรับภาษาไทย">Thai support flow</strong>
+            <span data-th="ดูตัวอย่างการตอบคำถามภาษาไทยที่เป็นธรรมชาติ">Verify the UI works for practical local support questions.</span>
           </div>
           <div>
-            <strong>Source clarity</strong>
-            <span
-              >Use the repository to inspect the Flask and Gemini
-              integration.</span
-            >
+            <strong data-th="โค้ดที่อ่านง่าย">Source clarity</strong>
+            <span data-th="เข้าไปดูวิธีเชื่อมต่อ Flask กับ Gemini ได้ใน Repository">Use the repository to inspect the Flask and Gemini integration.</span>
           </div>
         </div>
       </section>

@@ -16,24 +16,30 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../style.css" />
+    <script src="../../script.js" defer></script>
   </head>
   <body class="case-page">
+    <div id="particles" aria-hidden="true"></div>
     <main class="case-shell">
-      <nav class="case-nav" aria-label="Case study navigation">
-        <a href="../../#projects">Back to portfolio</a>
-        <a
-          href="https://romeototo.github.io/ai-kanban-board/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Live demo</a
-        >
+      <nav class="case-nav" aria-label="Case study navigation" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div style="display: flex; gap: 20px;">
+          <a href="../../#projects" data-th="กลับหน้าหลัก">Back to portfolio</a>
+          <a
+            href="https://romeototo.github.io/ai-kanban-board/"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-th="ดูตัวอย่างการใช้งาน"
+            >Live demo</a
+          >
+        </div>
+        <a href="javascript:void(0);" class="nav-link lang-toggle" aria-label="Toggle language to Thai">EN / <span>TH</span></a>
       </nav>
 
       <section class="case-hero">
         <div>
           <span class="section-tag">// case study</span>
-          <h1>AI-Powered Kanban Board</h1>
-          <p>
+          <h1 data-th="กระดาน Kanban พลัง AI">AI-Powered Kanban Board</h1>
+          <p data-th="เครื่องมือวางแผนที่ใช้ AI ช่วยแตกไอเดียใหญ่ๆ ให้เป็นงานย่อย พร้อมระบบซิงค์ข้อมูลบนคลาวด์แบบเรียลไทม์">
             A focused planning tool that uses AI to break rough ideas into
             smaller tasks, then keeps the board synced and easy to move.
           </p>
@@ -43,6 +49,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="project-link project-link-primary link-purple"
+              data-th="เปิดตัวอย่างการใช้งาน"
               >Open live demo</a
             >
             <a
@@ -50,6 +57,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="project-link"
+              data-th="ดูซอร์สโค้ด"
               >Source code</a
             >
           </div>
@@ -65,41 +73,41 @@
 
       <section class="case-metrics" aria-label="Project summary">
         <div>
-          <strong>Use case</strong>
-          <span>Personal task planning</span>
+          <strong data-th="จุดประสงค์">Use case</strong>
+          <span data-th="วางแผนงานส่วนตัว">Personal task planning</span>
         </div>
         <div>
-          <strong>Core loop</strong>
-          <span>Idea to smaller tracked tasks</span>
+          <strong data-th="ขั้นตอนหลัก">Core loop</strong>
+          <span data-th="เปลี่ยนไอเดียให้เป็นงานย่อย">Idea to smaller tracked tasks</span>
         </div>
         <div>
-          <strong>Stack</strong>
+          <strong data-th="เทคโนโลยี">Stack</strong>
           <span>Vanilla JS, Firebase, Gemini AI</span>
         </div>
       </section>
 
       <section class="case-section">
-        <h2>What needed to improve</h2>
+        <h2 data-th="ปัญหาที่ต้องแก้ไข">What needed to improve</h2>
         <div class="case-grid">
           <div class="case-panel">
-            <h3>Problem</h3>
-            <p>
+            <h3 data-th="ปัญหา">Problem</h3>
+            <p data-th="งานชิ้นใหญ่มักจะดูคลุมเครือ ทำให้ยากที่จะตัดสินใจว่าควรเริ่มทำอะไรก่อน กระดานนี้จึงถูกสร้างขึ้นเพื่อช่วยแปลงงานหยาบๆ ให้เป็นสิ่งที่ลงมือทำได้จริงโดยไม่เพิ่มภาระ">
               Big tasks often stay vague, which makes it hard to decide the next
               move. The board needed to help turn rough work into specific
               actions without adding process overhead.
             </p>
           </div>
           <div class="case-panel">
-            <h3>Build</h3>
-            <p>
+            <h3 data-th="สิ่งที่สร้าง">Build</h3>
+            <p data-th="แอปนี้จับคู่ UI ของ Kanban ที่เรียบง่ายเข้ากับระบบ AI แตกงานย่อย สามารถลากวางได้ ซิงค์ข้อมูลเรียลไทม์ด้วย Firestore และมีระบบสรุปผลให้ดูสถานะได้เร็วๆ">
               The app pairs a simple Kanban interface with AI task breakdown,
               drag-and-drop movement, real-time Firestore sync, and summary
               analytics for quick status checks.
             </p>
           </div>
           <div class="case-panel">
-            <h3>Result</h3>
-            <p>
+            <h3 data-th="ผลลัพธ์">Result</h3>
+            <p data-th="พอร์ตโฟลิโอตอนนี้นำเสนอกระดาน Kanban ที่มีชีวิต ผู้เยี่ยมชมสามารถเห็นเป้าหมาย โค้ดที่ใช้ เดโม่ที่ใช้งานได้จริง และซอร์สโค้ดรวมอยู่ในที่เดียว">
               The portfolio now presents the board as more than a screenshot:
               visitors can see the goal, implementation choices, live demo, and
               source in one focused case study.
@@ -109,29 +117,31 @@
       </section>
 
       <section class="case-section">
-        <h2>What to inspect</h2>
+        <h2 data-th="สิ่งที่น่าสนใจในโปรเจกต์นี้">What to inspect</h2>
         <div class="inspect-list">
           <div>
-            <strong>AI breakdown</strong>
-            <span>Test whether rough ideas become smaller concrete tasks.</span>
+            <strong data-th="AI แตกงานย่อย">AI breakdown</strong>
+            <span data-th="ทดสอบว่า AI สามารถแปลงไอเดียหยาบๆ ให้เป็นงานที่เป็นรูปธรรมได้หรือไม่"
+              >Test whether rough ideas become smaller concrete tasks.</span
+            >
           </div>
           <div>
-            <strong>Board movement</strong>
-            <span
+            <strong data-th="การเลื่อนสถานะ">Board movement</strong>
+            <span data-th="ลากการ์ดข้ามคอลัมน์และดูว่า Flow การทำงานลื่นไหลหรือไม่"
               >Move tasks across columns and check that the flow stays
               clear.</span
             >
           </div>
           <div>
-            <strong>Cloud sync</strong>
-            <span
+            <strong data-th="ระบบ Cloud Sync">Cloud sync</strong>
+            <span data-th="ดูว่า Firestore บันทึกข้อมูลและซิงค์ข้ามอุปกรณ์ได้อย่างไร"
               >Review how Firestore keeps task state available across
               sessions.</span
             >
           </div>
           <div>
-            <strong>Analytics view</strong>
-            <span
+            <strong data-th="Dashboard วิเคราะห์">Analytics view</strong>
+            <span data-th="ใช้แถบสรุปข้อมูลเพื่อดูความคืบหน้าของโปรเจกต์ได้อย่างรวดเร็ว"
               >Use the summary states to understand project progress
               quickly.</span
             >

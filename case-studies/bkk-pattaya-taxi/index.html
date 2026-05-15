@@ -16,24 +16,30 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../style.css" />
+    <script src="../../script.js" defer></script>
   </head>
   <body class="case-page">
+    <div id="particles" aria-hidden="true"></div>
     <main class="case-shell">
-      <nav class="case-nav" aria-label="Case study navigation">
-        <a href="../../#projects">Back to portfolio</a>
-        <a
-          href="https://romeototo.github.io/bkk-pattaya-taxi/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Live demo</a
-        >
+      <nav class="case-nav" aria-label="Case study navigation" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div style="display: flex; gap: 20px;">
+          <a href="../../#projects" data-th="กลับหน้าหลัก">Back to portfolio</a>
+          <a
+            href="https://romeototo.github.io/bkk-pattaya-taxi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-th="ดูตัวอย่างการใช้งาน"
+            >Live demo</a
+          >
+        </div>
+        <a href="javascript:void(0);" class="nav-link lang-toggle" aria-label="Toggle language to Thai">EN / <span>TH</span></a>
       </nav>
 
       <section class="case-hero">
         <div>
           <span class="section-tag">// case study</span>
-          <h1>BKK Pattaya Private Taxi</h1>
-          <p>
+          <h1 data-th="บริการแท็กซี่พัทยา-กรุงเทพ">BKK Pattaya Private Taxi</h1>
+          <p data-th="เว็บไซต์และระบบจองรถแท็กซี่ส่วนตัวที่เน้น SEO เพื่อเปลี่ยนผู้เข้าชมที่ค้นหาเส้นทางให้กลายเป็นการขอใบเสนอราคา">
             A route-focused landing page and booking flow designed to turn
             Thailand transfer search intent into clear quote requests.
           </p>
@@ -43,6 +49,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="project-link project-link-primary link-indigo"
+              data-th="เปิดตัวอย่างการใช้งาน"
               >Open live demo</a
             >
             <a
@@ -50,6 +57,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="project-link"
+              data-th="ดูซอร์สโค้ด"
               >Source code</a
             >
           </div>
@@ -65,41 +73,41 @@
 
       <section class="case-metrics" aria-label="Project summary">
         <div>
-          <strong>Use case</strong>
-          <span>Private taxi booking funnel</span>
+          <strong data-th="จุดประสงค์">Use case</strong>
+          <span data-th="เว็บไซต์จองรถแท็กซี่ส่วนตัว">Private taxi booking funnel</span>
         </div>
         <div>
-          <strong>Core loop</strong>
-          <span>Route interest to quote request</span>
+          <strong data-th="ขั้นตอนหลัก">Core loop</strong>
+          <span data-th="เปลี่ยนความสนใจเส้นทางเป็นการขอราคา">Route interest to quote request</span>
         </div>
         <div>
-          <strong>Stack</strong>
+          <strong data-th="เทคโนโลยี">Stack</strong>
           <span>TypeScript, React, tRPC, SEO</span>
         </div>
       </section>
 
       <section class="case-section">
-        <h2>What needed to improve</h2>
+        <h2 data-th="ปัญหาที่ต้องแก้ไข">What needed to improve</h2>
         <div class="case-grid">
           <div class="case-panel">
-            <h3>Problem</h3>
-            <p>
+            <h3 data-th="ปัญหา">Problem</h3>
+            <p data-th="ลูกค้าที่ค้นหาเส้นทางต้องการความน่าเชื่อถือ ตัวเลือกรถที่ชัดเจน และช่องทางติดต่อที่ง่าย การใช้หน้าเว็บธรรมดาจะทำให้ลูกค้าต้องพยายามมากเกินไปก่อนที่จะถามราคา">
               Route-based taxi searches need fast trust signals, clear vehicle
               choices, and direct contact paths. A generic landing page would
               make visitors work too hard before asking for a quote.
             </p>
           </div>
           <div class="case-panel">
-            <h3>Build</h3>
-            <p>
+            <h3 data-th="สิ่งที่สร้าง">Build</h3>
+            <p data-th="ออกแบบหน้าเว็บที่เน้นเป้าหมายเส้นทาง ฟอร์มจองที่ใช้งานง่ายบนมือถือ ตัวเลือกรถ และช่องทางการติดต่อหลากหลาย เช่น LINE, WhatsApp, Telegram และอีเมล">
               The page focuses on route intent, mobile-first booking fields,
               vehicle options, local transfer copy, and multi-channel contact
               paths through LINE, WhatsApp, Telegram, and email.
             </p>
           </div>
           <div class="case-panel">
-            <h3>Result</h3>
-            <p>
+            <h3 data-th="ผลลัพธ์">Result</h3>
+            <p data-th="แสดงให้เห็นถึงวิธีคิดแบบทำ Product จริง: ข้อมูลเพื่อ SEO, UI ที่เน้นคอนเวอร์ชัน รวมถึงการโชว์ซอร์สโค้ดและเดโม่ใน GitHub Pages เพื่อให้คนตรวจสอบได้ง่าย">
               The project shows practical product thinking: SEO content,
               conversion-focused UI, source code, and a live GitHub Pages demo
               are all inspectable from one page.
@@ -109,29 +117,29 @@
       </section>
 
       <section class="case-section">
-        <h2>What to inspect</h2>
+        <h2 data-th="สิ่งที่น่าสนใจในโปรเจกต์นี้">What to inspect</h2>
         <div class="inspect-list">
           <div>
-            <strong>Booking path</strong>
-            <span
+            <strong data-th="การออกแบบ Flow">Booking path</strong>
+            <span data-th="ตรวจสอบความเร็วที่ผู้เข้าชมเปลี่ยนจากการเลือกเส้นทางเป็นการขอราคา"
               >Check how quickly a visitor can move from route to quote.</span
             >
           </div>
           <div>
-            <strong>Mobile layout</strong>
-            <span
+            <strong data-th="หน้าจอบนมือถือ">Mobile layout</strong>
+            <span data-th="ดูฟอร์ม การ์ดเลือกรถ และความชัดเจนของปุ่ม CTA"
               >Review the form, vehicle cards, and call-to-action density.</span
             >
           </div>
           <div>
-            <strong>SEO structure</strong>
-            <span
+            <strong data-th="โครงสร้าง SEO">SEO structure</strong>
+            <span data-th="ดูการใช้ Copywriting และ Heading ที่เจาะจงเส้นทาง"
               >Inspect route-focused copy, headings, and service framing.</span
             >
           </div>
           <div>
-            <strong>Contact handoff</strong>
-            <span
+            <strong data-th="การส่งต่อข้อมูล">Contact handoff</strong>
+            <span data-th="ทดสอบการส่งข้อมูลการจองไปยังช่องทางแชทต่างๆ"
               >Verify the multi-channel flow for real booking inquiries.</span
             >
           </div>
