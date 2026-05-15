@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTerminal();
   initBackToTop();
   initLanguageToggle();
+  initAiAssistant();
 });
 
 // ======================================
@@ -381,3 +382,89 @@ function initLanguageToggle() {
     updateLang(newLang);
   });
 }
+
+// ======================================
+// AI Assistant Logic
+// ======================================
+
+function initAiAssistant() {
+  const toggle = document.getElementById('aiToggle');
+  const panel = document.getElementById('aiPanel');
+  const close = document.getElementById('closeAi');
+  const input = document.getElementById('aiInput');
+  const send = document.getElementById('sendAi');
+  const body = document.getElementById('aiBody');
+
+  if (!toggle || !panel || !input || !send || !body) return;
+
+  const togglePanel = () => {
+    panel.classList.toggle('active');
+    if (panel.classList.contains('active')) {
+      input.focus();
+      document.querySelector('.notification-badge')?.remove();
+    }
+  };
+
+  toggle.addEventListener('click', togglePanel);
+  close?.addEventListener('click', togglePanel);
+
+  const responses = {
+    en: {
+      hello: "Hi there! How can I help you today? You can ask about skills, projects, or how to contact Romeo.",
+      skills: "Romeo is proficient in Python, JavaScript, React, and AI Automation (using Gemini/OpenAI APIs). He also builds Web Games and Web3 apps.",
+      projects: "Romeo has built an IT Support Chatbot, an AI Kanban Board, a CCTV Playback Workspace, and a Private Taxi Booking system. Check the 'Projects' section for details!",
+      contact: "You can reach Romeo via GitHub, X (@RoMeoT0T0), or by emailing him directly at the link in the footer.",
+      hire: "Romeo is currently open for focused AI and automation builds! Feel free to reach out via X or GitHub to discuss your project.",
+      default: "I'm not sure about that. Try asking about 'skills', 'projects', or 'hiring'!"
+    },
+    th: {
+      hello: "สวัสดีครับ! มีอะไรให้ช่วยไหมครับ? สอบถามเรื่องทักษะ, ผลงาน หรือการติดต่อจ้างงานได้เลยครับ",
+      skills: "คุณ Romeo เชี่ยวชาญ Python, JavaScript, React และ AI Automation (Gemini/OpenAI) นอกจากนี้ยังทำเว็บเกมและ Web3 ด้วยครับ",
+      projects: "ผลงานเด่นมีทั้ง แชทบอทไอที, กระดาน Kanban พลัง AI, ระบบจัดการกล้องวงจรปิด และเว็บจองรถแท็กซี่ครับ ดูรายละเอียดได้ที่ส่วน 'ผลงาน' เลย",
+      contact: "ติดต่อคุณ Romeo ได้ทาง GitHub, X (@RoMeoT0T0) หรืออีเมลตามลิงก์ที่ส่วนท้ายหน้าเว็บครับ",
+      hire: "ตอนนี้คุณ Romeo เปิดรับงานพัฒนาระบบ AI และ Automation ครับ! ทักไปคุยรายละเอียดได้ทาง X หรือ GitHub ได้เลย",
+      default: "ผมยังไม่ค่อยเข้าใจคำถามนี้ ลองถามเรื่อง 'ทักษะ', 'ผลงาน' หรือ 'การจ้างงาน' ดูไหมครับ?"
+    }
+  };
+
+  const addMessage = (text, type = 'bot') => {
+    const msg = document.createElement('div');
+    msg.className = `ai-msg ai-msg-${type}`;
+    msg.innerText = text;
+    body.appendChild(msg);
+    body.scrollTop = body.scrollHeight;
+  };
+
+  const handleSend = () => {
+    const text = input.value.trim().toLowerCase();
+    if (!text) return;
+
+    addMessage(input.value, 'user');
+    input.value = '';
+
+    const lang = localStorage.getItem('lang') || 'en';
+    const r = responses[lang];
+
+    setTimeout(() => {
+      if (text.includes('hello') || text.includes('hi') || text.includes('ดีครับ') || text.includes('สวัสดี')) {
+        addMessage(r.hello);
+      } else if (text.includes('skill') || text.includes('ทักษะ') || text.includes('เก่ง')) {
+        addMessage(r.skills);
+      } else if (text.includes('project') || text.includes('ผลงาน') || text.includes('ทำอะไร')) {
+        addMessage(r.projects);
+      } else if (text.includes('contact') || text.includes('ติดต่อ')) {
+        addMessage(r.contact);
+      } else if (text.includes('hire') || text.includes('จ้าง') || text.includes('งาน')) {
+        addMessage(r.hire);
+      } else {
+        addMessage(r.default);
+      }
+    }, 600);
+  };
+
+  send.addEventListener('click', handleSend);
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handleSend();
+  });
+}
+
