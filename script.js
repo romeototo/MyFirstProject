@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initBackToTop();
   initLanguageToggle();
   initAiAssistant();
+  initAnimatedCounters();
 });
 
 // ======================================
@@ -379,13 +380,24 @@ function initTerminal() {
 
 function initBackToTop() {
   const backToTopBtn = document.getElementById("backToTop");
+  const ring = document.getElementById("backToTopRing");
   if (!backToTopBtn) return;
+
+  const circumference = 2 * Math.PI * 22; // r=22
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
       backToTopBtn.classList.add("visible");
     } else {
       backToTopBtn.classList.remove("visible");
+    }
+
+    // Update circular progress ring
+    if (ring) {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = window.scrollY / docHeight;
+      const offset = circumference - (scrollPercent * circumference);
+      ring.style.strokeDashoffset = offset;
     }
   });
 
@@ -395,6 +407,58 @@ function initBackToTop() {
       behavior: "smooth"
     });
   });
+}
+
+// ======================================
+// Animated Counters
+// ======================================
+
+function initAnimatedCounters() {
+  const counters = document.querySelectorAll('[data-count]');
+  if (!counters.length) return;
+
+  const animateCounter = (el) => {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    if (isNaN(target)) return;
+
+    const duration = 1500; // ms
+    const startTime = performance.now();
+
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    const update = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutCubic(progress);
+      const current = Math.round(easedProgress * target);
+
+      el.textContent = current;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    counters.forEach(el => {
+      el.textContent = el.getAttribute('data-count');
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(el => observer.observe(el));
 }
 
 // ======================================
