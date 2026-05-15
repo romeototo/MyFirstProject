@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initProjectCardsGlow();
   initTerminal();
   initBackToTop();
+  initLanguageToggle();
 });
 
 // ======================================
@@ -55,15 +56,15 @@ function initTypewriter() {
   const element = document.getElementById("typewriter");
   if (!element) return;
 
-  const roles = [
-    "AI Tool Builder",
-    "Browser Game Developer",
-    "Automation Engineer",
-    "Open Source Maker",
-  ];
+  function getRoles() {
+    const lang = localStorage.getItem('lang') || 'en';
+    return lang === 'th' 
+      ? ["ผู้สร้าง AI Tool", "นักพัฒนาเกมบราวเซอร์", "วิศวกร Automation", "นักพัฒนา Open Source"]
+      : ["AI Tool Builder", "Browser Game Developer", "Automation Engineer", "Open Source Maker"];
+  }
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    element.textContent = roles[0];
+    element.textContent = getRoles()[0];
     return;
   }
 
@@ -73,6 +74,8 @@ function initTypewriter() {
   let speed = 80;
 
   function type() {
+    const roles = getRoles();
+    if (roleIndex >= roles.length) roleIndex = 0;
     const currentRole = roles[roleIndex];
 
     if (isDeleting) {
@@ -342,5 +345,39 @@ function initBackToTop() {
       top: 0,
       behavior: "smooth"
     });
+  });
+}
+
+// ======================================
+// Language Toggle
+// ======================================
+
+function initLanguageToggle() {
+  const toggleBtn = document.querySelector('.lang-toggle');
+  if (!toggleBtn) return;
+
+  const updateLang = (lang) => {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-th]').forEach(el => {
+      if (!el.hasAttribute('data-en')) {
+        el.setAttribute('data-en', el.innerHTML);
+      }
+      el.innerHTML = lang === 'th' ? el.getAttribute('data-th') : el.getAttribute('data-en');
+    });
+
+    if (lang === 'th') {
+      toggleBtn.innerHTML = '<span>EN</span> / TH';
+    } else {
+      toggleBtn.innerHTML = 'EN / <span>TH</span>';
+    }
+  };
+
+  const currentLang = localStorage.getItem('lang') || 'en';
+  updateLang(currentLang);
+
+  toggleBtn.addEventListener('click', () => {
+    const newLang = localStorage.getItem('lang') === 'th' ? 'en' : 'th';
+    localStorage.setItem('lang', newLang);
+    updateLang(newLang);
   });
 }
