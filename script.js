@@ -148,6 +148,30 @@ function initNavbar() {
       }
     });
   });
+
+  // Scroll spy — highlight active nav link
+  const sections = document.querySelectorAll("section[id]");
+  const navLinksAll = document.querySelectorAll(".nav-link[href^='#']");
+
+  const scrollSpy = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinksAll.forEach((link) => link.classList.remove("active"));
+          const activeLink = document.querySelector(
+            `.nav-link[href="#${entry.target.id}"]`
+          );
+          if (activeLink) activeLink.classList.add("active");
+        }
+      });
+    },
+    {
+      rootMargin: "-20% 0px -60% 0px",
+      threshold: 0,
+    }
+  );
+
+  sections.forEach((section) => scrollSpy.observe(section));
 }
 
 // ======================================
