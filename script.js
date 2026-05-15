@@ -114,6 +114,8 @@ function initNavbar() {
 
   let lastScroll = 0;
 
+  const scrollProgressBar = document.getElementById("scrollProgress");
+
   window.addEventListener("scroll", () => {
     const currentScroll = window.scrollY;
 
@@ -121,6 +123,13 @@ function initNavbar() {
       navbar.classList.add("scrolled");
     } else {
       navbar.classList.remove("scrolled");
+    }
+
+    // Scroll progress bar
+    if (scrollProgressBar) {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (currentScroll / docHeight) * 100;
+      scrollProgressBar.style.width = scrollPercent + "%";
     }
 
     lastScroll = currentScroll;
@@ -200,7 +209,7 @@ function initMobileNav() {
 
 function initScrollReveal() {
   const elements = document.querySelectorAll(
-    ".about-card, .skill-category, .process-card, .project-card, .testimonial-card",
+    ".about-card, .skill-category, .process-card, .project-card, .testimonial-card, .start-card",
   );
 
   if (!elements.length) return;
