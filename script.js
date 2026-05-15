@@ -295,19 +295,34 @@ function initTerminal() {
       switch (cmd) {
         case "help":
           outputLine.innerHTML =
-            "Available commands:<br>&nbsp;whoami<br>&nbsp;skills<br>&nbsp;hire_romeo<br>&nbsp;clear<br>&nbsp;exit";
+            "Available commands:<br>&nbsp;whoami - About me<br>&nbsp;skills - Tech stack<br>&nbsp;projects - My work<br>&nbsp;socials - Find me online<br>&nbsp;sudo get_hired - Access the secret<br>&nbsp;clear - Clear screen<br>&nbsp;exit - Close terminal";
           break;
         case "whoami":
           outputLine.innerHTML =
-            "visitor - You are awesome for finding this! Enjoy exploring my portfolio.";
+            "Romeo - A Bangkok-based builder turning messy workflows into shipped AI & automation tools.";
           break;
         case "skills":
           outputLine.innerHTML =
-            "Python, JavaScript, React, Tailwind, AI Automation, Prompt Engineering, Web3...";
+            "Core: Python, JS, React, AI Agents<br>Specialty: Gemini/OpenAI API, Automation, Web Games";
           break;
-        case "hire_romeo":
+        case "socials":
           outputLine.innerHTML =
-            "Great choice! Email me or DM me on X (@RoMeoT0T0) to get started. 🚀";
+            "GitHub: @romeototo<br>X (Twitter): @RoMeoT0T0<br>Web3: RoMEoTOTO.base.eth";
+          break;
+        case "projects":
+          outputLine.innerHTML =
+            "IT Support Chatbot, AI Kanban, CCTV Workspace, Taxi Booking Site. Type 'projects -v' for details (future update).";
+          break;
+        case "sudo get_hired":
+          outputLine.innerHTML =
+            "<span style='color: var(--green)'>[SUCCESS]</span> Access Granted! Romeo is ready to join your team. Launching contact form...";
+          setTimeout(() => {
+             document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
+             toggleTerminal();
+          }, 1500);
+          break;
+        case "cat bio.txt":
+          outputLine.innerHTML = "I build things that work. No fluff, just code and value.";
           break;
         case "clear":
           body.innerHTML = "";

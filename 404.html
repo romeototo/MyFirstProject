@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Lost in Space | romeototo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        .error-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .error-code {
+            font-size: clamp(100px, 20vw, 250px);
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--accent), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 30px var(--accent-glow));
+        }
+        .error-title {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            font-family: var(--font-mono);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div id="particles"></div>
+    
+    <div class="error-page">
+        <div class="error-code">404</div>
+        <h1 class="error-title" data-th="ดูเหมือนคุณจะหลงทางในช่องว่างดิจิทัล">
+            // Looks like you're lost in the digital void.
+        </h1>
+        <a href="index.html" class="btn btn-primary" data-th="กลับสู่ฐานทัพหลัก">
+            Back to Headquarters
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
