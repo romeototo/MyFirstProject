@@ -210,7 +210,7 @@ function initMobileNav() {
 
 function initScrollReveal() {
   const elements = document.querySelectorAll(
-    ".about-card, .skill-category, .process-card, .project-card, .testimonial-card, .start-card",
+    ".about-card, .skill-category, .process-card, .project-card, .github-stat-card, .start-card",
   );
 
   if (!elements.length) return;
