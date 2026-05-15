@@ -2468,6 +2468,10 @@ body {
   }
 
   .hero-cta {
+    align-items: center;
+  }
+
+  .hero-cta-row {
     justify-content: center;
   }
 
@@ -2557,6 +2561,12 @@ body {
   .hero-cta {
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-cta-row {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   .btn {
