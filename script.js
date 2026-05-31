@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!prefersReducedMotion) {
     initParticles();
+    initCodeTyping();
   }
   initTypewriter();
   initNavbar();
@@ -42,7 +43,7 @@ function initParticles() {
     particle.style.width = 2 + Math.random() * 3 + "px";
     particle.style.height = particle.style.width;
 
-    const colors = ["#6C63FF", "#00D9FF", "#00FF88", "#FF6B9D"];
+    const colors = ["#6C63FF", "#8b83ff", "#00D9FF", "#6C63FF"];
     particle.style.background =
       colors[Math.floor(Math.random() * colors.length)];
 
@@ -340,7 +341,7 @@ function initTerminal() {
       switch (cmd) {
         case "help":
           outputLine.innerHTML =
-            "Available commands:<br>&nbsp;whoami - About me<br>&nbsp;skills - Tech stack<br>&nbsp;projects - My work<br>&nbsp;socials - Find me online<br>&nbsp;sudo get_hired - Access the secret<br>&nbsp;clear - Clear screen<br>&nbsp;exit - Close terminal";
+            "Available commands:<br>&nbsp;whoami &nbsp;&nbsp;&nbsp;— About me<br>&nbsp;skills &nbsp;&nbsp;&nbsp;— Tech stack<br>&nbsp;projects &nbsp;— My work<br>&nbsp;ls &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— List all projects<br>&nbsp;ping romeo — Ping the dev<br>&nbsp;uptime &nbsp;&nbsp;&nbsp;— System uptime<br>&nbsp;date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— Current date<br>&nbsp;open github — Open GitHub profile<br>&nbsp;matrix &nbsp;&nbsp;&nbsp;— ???<br>&nbsp;socials &nbsp;&nbsp;— Find me online<br>&nbsp;sudo get_hired — Access the secret<br>&nbsp;clear &nbsp;&nbsp;&nbsp;&nbsp;— Clear screen<br>&nbsp;exit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— Close terminal";
           break;
         case "whoami":
           outputLine.innerHTML =
@@ -372,6 +373,52 @@ function initTerminal() {
           outputLine.innerHTML =
             "I build things that work. No fluff, just code and value.";
           break;
+        case "ls":
+        case "ls projects":
+          outputLine.innerHTML =
+            "<span style='color:var(--cyan)'>drwxr-xr-x</span> &nbsp;it-support-chatbot/<br><span style='color:var(--cyan)'>drwxr-xr-x</span> &nbsp;ai-kanban-board/<br><span style='color:var(--cyan)'>drwxr-xr-x</span> &nbsp;bkk-pattaya-taxi/<br><span style='color:var(--cyan)'>drwxr-xr-x</span> &nbsp;monster-tapper/<br><span style='color:var(--cyan)'>drwxr-xr-x</span> &nbsp;telegram-ai-it-agent/<br><span style='color:var(--cyan)'>drwxr-xr-x</span> &nbsp;cctv-playback-workspace/";
+          break;
+        case "ping romeo":
+          (function() {
+            outputLine.innerHTML = "PING romeo (127.0.0.1) 56 bytes of data.";
+            body.appendChild(outputLine);
+            [12, 8, 11].forEach((ms, i) => {
+              setTimeout(() => {
+                const line = document.createElement("div");
+                line.className = "term-line term-output";
+                line.innerHTML = `64 bytes: icmp_seq=${i} time=<span style='color:var(--green)'>${ms}ms</span>`;
+                body.appendChild(line);
+                body.scrollTop = body.scrollHeight;
+              }, (i + 1) * 400);
+            });
+            setTimeout(() => {
+              const line = document.createElement("div");
+              line.className = "term-line term-output";
+              line.innerHTML = "— romeo ping statistics — <span style='color:var(--green)'>3 packets, 0% loss</span>";
+              body.appendChild(line);
+              body.scrollTop = body.scrollHeight;
+            }, 1800);
+            return;
+          })();
+          return;
+        case "uptime":
+          (function() {
+            const years = new Date().getFullYear() - 2016;
+            outputLine.innerHTML = `romeo-dev &nbsp;up ${years} years &nbsp;|&nbsp; load avg: ☕ high, 🔧 always &nbsp;|&nbsp; status: <span style='color:var(--green)'>building</span>`;
+          })();
+          break;
+        case "date":
+          outputLine.innerHTML = `<span style='color:var(--cyan)'>${new Date().toLocaleString('en-GB', { timeZone: 'Asia/Bangkok', weekday:'short', year:'numeric', month:'short', day:'2-digit', hour:'2-digit', minute:'2-digit', second:'2-digit' })}</span> ICT (Bangkok)`;
+          break;
+        case "open github":
+          window.open("https://github.com/romeototo", "_blank", "noopener");
+          outputLine.innerHTML = "<span style='color:var(--green)'>[OK]</span> Opening github.com/romeototo ...";
+          break;
+        case "matrix":
+          outputLine.innerHTML = "<span style='color:var(--green)'>[INIT]</span> Entering the matrix... (3s)";
+          document.body.classList.add("matrix-mode");
+          setTimeout(() => document.body.classList.remove("matrix-mode"), 3500);
+          break;
         case "clear":
           body.innerHTML = "";
           return;
@@ -379,7 +426,7 @@ function initTerminal() {
           toggleTerminal();
           return;
         default:
-          outputLine.innerHTML = `Command not found: ${cmd}. Type 'help' for available commands.`;
+          outputLine.innerHTML = `Command not found: <span style='color:var(--pink)'>${cmd}</span>. Type <span style='color:var(--cyan)'>help</span> for available commands.`;
       }
 
       body.appendChild(outputLine);
@@ -623,5 +670,32 @@ function initAiAssistant() {
   send.addEventListener("click", handleSend);
   input.addEventListener("keypress", (e) => {
     if (e.key === "Enter") handleSend();
+  });
+}
+
+// ======================================
+// Code Window Typing Animation
+// ======================================
+
+function initCodeTyping() {
+  const pre = document.querySelector(".code-body pre code");
+  if (!pre) return;
+
+  const originalHTML = pre.innerHTML;
+  const lines = originalHTML.split("\n");
+  pre.innerHTML = "";
+  pre.style.minHeight = "190px";
+
+  lines.forEach((line, i) => {
+    const span = document.createElement("span");
+    span.style.display = "inline";
+    span.style.opacity = "0";
+    span.style.transition = "opacity 0.35s ease";
+    span.innerHTML = line + (i < lines.length - 1 ? "\n" : "");
+    pre.appendChild(span);
+
+    setTimeout(() => {
+      span.style.opacity = "1";
+    }, 700 + i * 200);
   });
 }
