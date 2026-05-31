@@ -2,7 +2,7 @@
 
 # RoMEoTOTO Portfolio
 
-**Public portfolio hub for AI automation tools, IT support projects, web products, and selected interactive experiments.**
+**Public portfolio hub for IT support tools, automation workflows, web products, and selected interactive experiments.**
 
 <p>
   <a href="https://romeototo.github.io/portfolio-website/"><img src="https://img.shields.io/badge/Live-GitHub_Pages-6366f1?style=for-the-badge" alt="Live site" /></a>
@@ -23,7 +23,7 @@ This repository is the public portfolio entry point for RoMEoTOTO. It is designe
 
 The site prioritizes:
 
-- practical AI and IT automation projects
+- practical IT automation and support projects
 - live demos and source links
 - real screenshots instead of generic placeholders
 - case studies that explain problem, build approach, and result
@@ -35,7 +35,7 @@ The site prioritizes:
 
 | Project                                                                              | Type                 | What to inspect                                                      |
 | ------------------------------------------------------------------------------------ | -------------------- | -------------------------------------------------------------------- |
-| [IT Support AI Chatbot](https://github.com/romeototo/it-support-chatbot)             | AI support assistant | Gemini responses, FAQ routing, ticket capture, admin workflow        |
+| [IT Support AI Chatbot](https://github.com/romeototo/it-support-chatbot)             | Support assistant    | FAQ routing, ticket capture, admin workflow, Thai support UI         |
 | [Telegram AI IT Agent](https://github.com/romeototo/telegram-ai-it-automation-agent) | IT automation agent  | Safety model, dry-run behavior, audit-log concept, operator controls |
 | [BKK Pattaya Taxi](https://github.com/romeototo/bkk-pattaya-taxi)                    | Product landing page | React/TypeScript stack, booking UX, multilingual copy, lead capture  |
 | [AI Kanban Board](https://github.com/romeototo/ai-kanban-board)                      | Productivity tool    | AI task breakdown, drag and drop, realtime task planning             |

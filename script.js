@@ -62,16 +62,16 @@ function initTypewriter() {
     const lang = localStorage.getItem("lang") || "en";
     return lang === "th"
       ? [
-          "ผู้สร้าง AI Tool",
-          "นักพัฒนาเกมบราวเซอร์",
-          "วิศวกร Automation",
-          "นักพัฒนา Open Source",
+          "นักพัฒนา IT Automation",
+          "ผู้สร้างเครื่องมือซัพพอร์ต",
+          "นักพัฒนา Python / JavaScript",
+          "ดูแลโปรเจกต์ Open Source",
         ]
       : [
-          "AI Tool Builder",
-          "Browser Game Developer",
-          "Automation Engineer",
-          "Open Source Maker",
+          "IT Automation Developer",
+          "Support Tool Developer",
+          "Python / JavaScript Developer",
+          "Open Source Maintainer",
         ];
   }
 
@@ -344,15 +344,15 @@ function initTerminal() {
           break;
         case "whoami":
           outputLine.innerHTML =
-            "Romeo - A Bangkok-based builder turning messy workflows into shipped AI & automation tools.";
+            "Romeo - A Bangkok-based developer building IT support tools, automation workflows, and small web products.";
           break;
         case "skills":
           outputLine.innerHTML =
-            "Core: Python, JS, React, AI Agents<br>Specialty: Gemini/OpenAI API, Automation, Web Games";
+            "Core: Python, JavaScript, React<br>Specialty: IT automation, support workflows, small web products";
           break;
         case "socials":
           outputLine.innerHTML =
-            "GitHub: @romeototo<br>X (Twitter): @RoMeoT0T0<br>Web3: RoMEoTOTO.base.eth";
+            "GitHub: @romeototo<br>X (Twitter): @RoMeoT0T0<br>Email: romeototo.dev@gmail.com";
           break;
         case "projects":
           outputLine.innerHTML =
@@ -544,12 +544,12 @@ function initAiAssistant() {
       hello:
         "Hi there! How can I help you today? You can ask about skills, projects, or how to contact Romeo.",
       skills:
-        "Romeo is proficient in Python, JavaScript, React, and AI Automation (using Gemini/OpenAI APIs). He also builds Web Games and Web3 apps.",
+        "Romeo works with Python, JavaScript, React, IT automation, and support workflows. He also ships small static web products and browser-based demos.",
       projects:
         "Romeo has built an IT Support Chatbot, an AI Kanban Board, a CCTV Playback Workspace, and a Private Taxi Booking system. Check the 'Projects' section for details!",
       contact:
         "You can reach Romeo via GitHub, X (@RoMeoT0T0), or by emailing him directly at the link in the footer.",
-      hire: "Romeo is currently open for focused AI and automation builds! Feel free to reach out via X or GitHub to discuss your project.",
+      hire: "Romeo is currently open for focused internal tools, support workflow, and automation builds. Reach out via email, X, or GitHub with the current process and what should happen next.",
       default:
         "I'm not sure about that. Try asking about 'skills', 'projects', or 'hiring'!",
     },
@@ -557,12 +557,12 @@ function initAiAssistant() {
       hello:
         "สวัสดีครับ! มีอะไรให้ช่วยไหมครับ? สอบถามเรื่องทักษะ, ผลงาน หรือการติดต่อจ้างงานได้เลยครับ",
       skills:
-        "คุณ Romeo เชี่ยวชาญ Python, JavaScript, React และ AI Automation (Gemini/OpenAI) นอกจากนี้ยังทำเว็บเกมและ Web3 ด้วยครับ",
+        "คุณ Romeo ทำงานกับ Python, JavaScript, React, ระบบอัตโนมัติ และ workflow สำหรับงานซัพพอร์ตไอที รวมถึงเว็บโปรดักต์ขนาดเล็กและเดโมบนบราวเซอร์ครับ",
       projects:
         "ผลงานเด่นมีทั้ง แชทบอทไอที, กระดาน Kanban พลัง AI, ระบบจัดการกล้องวงจรปิด และเว็บจองรถแท็กซี่ครับ ดูรายละเอียดได้ที่ส่วน 'ผลงาน' เลย",
       contact:
         "ติดต่อคุณ Romeo ได้ทาง GitHub, X (@RoMeoT0T0) หรืออีเมลตามลิงก์ที่ส่วนท้ายหน้าเว็บครับ",
-      hire: "ตอนนี้คุณ Romeo เปิดรับงานพัฒนาระบบ AI และ Automation ครับ! ทักไปคุยรายละเอียดได้ทาง X หรือ GitHub ได้เลย",
+      hire: "ตอนนี้คุณ Romeo เปิดรับงาน internal tools, support workflow และ automation ครับ ส่ง process ปัจจุบันกับผลลัพธ์ที่ต้องการมาคุยได้ทางอีเมล, X หรือ GitHub",
       default:
         "ผมยังไม่ค่อยเข้าใจคำถามนี้ ลองถามเรื่อง 'ทักษะ', 'ผลงาน' หรือ 'การจ้างงาน' ดูไหมครับ?",
     },
