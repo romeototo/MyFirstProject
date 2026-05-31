@@ -59,10 +59,20 @@ function initTypewriter() {
   if (!element) return;
 
   function getRoles() {
-    const lang = localStorage.getItem('lang') || 'en';
-    return lang === 'th' 
-      ? ["ผู้สร้าง AI Tool", "นักพัฒนาเกมบราวเซอร์", "วิศวกร Automation", "นักพัฒนา Open Source"]
-      : ["AI Tool Builder", "Browser Game Developer", "Automation Engineer", "Open Source Maker"];
+    const lang = localStorage.getItem("lang") || "en";
+    return lang === "th"
+      ? [
+          "ผู้สร้าง AI Tool",
+          "นักพัฒนาเกมบราวเซอร์",
+          "วิศวกร Automation",
+          "นักพัฒนา Open Source",
+        ]
+      : [
+          "AI Tool Builder",
+          "Browser Game Developer",
+          "Automation Engineer",
+          "Open Source Maker",
+        ];
   }
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -128,7 +138,8 @@ function initNavbar() {
 
     // Scroll progress bar
     if (scrollProgressBar) {
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = (currentScroll / docHeight) * 100;
       scrollProgressBar.style.width = scrollPercent + "%";
     }
@@ -169,7 +180,7 @@ function initNavbar() {
         if (entry.isIntersecting) {
           navLinksAll.forEach((link) => link.classList.remove("active"));
           const activeLink = document.querySelector(
-            `.nav-link[href="#${entry.target.id}"]`
+            `.nav-link[href="#${entry.target.id}"]`,
           );
           if (activeLink) activeLink.classList.add("active");
         }
@@ -178,7 +189,7 @@ function initNavbar() {
     {
       rootMargin: "-20% 0px -60% 0px",
       threshold: 0,
-    }
+    },
   );
 
   sections.forEach((section) => scrollSpy.observe(section));
@@ -351,12 +362,15 @@ function initTerminal() {
           outputLine.innerHTML =
             "<span style='color: var(--green)'>[SUCCESS]</span> Access Granted! Romeo is ready to join your team. Launching contact form...";
           setTimeout(() => {
-             document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
-             toggleTerminal();
+            document
+              .getElementById("contact")
+              .scrollIntoView({ behavior: "smooth" });
+            toggleTerminal();
           }, 1500);
           break;
         case "cat bio.txt":
-          outputLine.innerHTML = "I build things that work. No fluff, just code and value.";
+          outputLine.innerHTML =
+            "I build things that work. No fluff, just code and value.";
           break;
         case "clear":
           body.innerHTML = "";
@@ -394,9 +408,10 @@ function initBackToTop() {
 
     // Update circular progress ring
     if (ring) {
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = window.scrollY / docHeight;
-      const offset = circumference - (scrollPercent * circumference);
+      const offset = circumference - scrollPercent * circumference;
       ring.style.strokeDashoffset = offset;
     }
   });
@@ -404,7 +419,7 @@ function initBackToTop() {
   backToTopBtn.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   });
 }
@@ -414,11 +429,11 @@ function initBackToTop() {
 // ======================================
 
 function initAnimatedCounters() {
-  const counters = document.querySelectorAll('[data-count]');
+  const counters = document.querySelectorAll("[data-count]");
   if (!counters.length) return;
 
   const animateCounter = (el) => {
-    const target = parseInt(el.getAttribute('data-count'), 10);
+    const target = parseInt(el.getAttribute("data-count"), 10);
     if (isNaN(target)) return;
 
     const duration = 1500; // ms
@@ -442,23 +457,26 @@ function initAnimatedCounters() {
     requestAnimationFrame(update);
   };
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    counters.forEach(el => {
-      el.textContent = el.getAttribute('data-count');
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    counters.forEach((el) => {
+      el.textContent = el.getAttribute("data-count");
     });
     return;
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
 
-  counters.forEach(el => observer.observe(el));
+  counters.forEach((el) => observer.observe(el));
 }
 
 // ======================================
@@ -466,31 +484,32 @@ function initAnimatedCounters() {
 // ======================================
 
 function initLanguageToggle() {
-  const toggleBtn = document.querySelector('.lang-toggle');
+  const toggleBtn = document.querySelector(".lang-toggle");
   if (!toggleBtn) return;
 
   const updateLang = (lang) => {
     document.documentElement.lang = lang;
-    document.querySelectorAll('[data-th]').forEach(el => {
-      if (!el.hasAttribute('data-en')) {
-        el.setAttribute('data-en', el.innerHTML);
+    document.querySelectorAll("[data-th]").forEach((el) => {
+      if (!el.hasAttribute("data-en")) {
+        el.setAttribute("data-en", el.innerHTML);
       }
-      el.innerHTML = lang === 'th' ? el.getAttribute('data-th') : el.getAttribute('data-en');
+      el.innerHTML =
+        lang === "th" ? el.getAttribute("data-th") : el.getAttribute("data-en");
     });
 
-    if (lang === 'th') {
-      toggleBtn.innerHTML = '<span>EN</span> / TH';
+    if (lang === "th") {
+      toggleBtn.innerHTML = "<span>EN</span> / TH";
     } else {
-      toggleBtn.innerHTML = 'EN / <span>TH</span>';
+      toggleBtn.innerHTML = "EN / <span>TH</span>";
     }
   };
 
-  const currentLang = localStorage.getItem('lang') || 'en';
+  const currentLang = localStorage.getItem("lang") || "en";
   updateLang(currentLang);
 
-  toggleBtn.addEventListener('click', () => {
-    const newLang = localStorage.getItem('lang') === 'th' ? 'en' : 'th';
-    localStorage.setItem('lang', newLang);
+  toggleBtn.addEventListener("click", () => {
+    const newLang = localStorage.getItem("lang") === "th" ? "en" : "th";
+    localStorage.setItem("lang", newLang);
     updateLang(newLang);
   });
 }
@@ -500,47 +519,57 @@ function initLanguageToggle() {
 // ======================================
 
 function initAiAssistant() {
-  const toggle = document.getElementById('aiToggle');
-  const panel = document.getElementById('aiPanel');
-  const close = document.getElementById('closeAi');
-  const input = document.getElementById('aiInput');
-  const send = document.getElementById('sendAi');
-  const body = document.getElementById('aiBody');
+  const toggle = document.getElementById("aiToggle");
+  const panel = document.getElementById("aiPanel");
+  const close = document.getElementById("closeAi");
+  const input = document.getElementById("aiInput");
+  const send = document.getElementById("sendAi");
+  const body = document.getElementById("aiBody");
 
   if (!toggle || !panel || !input || !send || !body) return;
 
   const togglePanel = () => {
-    panel.classList.toggle('active');
-    if (panel.classList.contains('active')) {
+    panel.classList.toggle("active");
+    if (panel.classList.contains("active")) {
       input.focus();
-      document.querySelector('.notification-badge')?.remove();
+      document.querySelector(".notification-badge")?.remove();
     }
   };
 
-  toggle.addEventListener('click', togglePanel);
-  close?.addEventListener('click', togglePanel);
+  toggle.addEventListener("click", togglePanel);
+  close?.addEventListener("click", togglePanel);
 
   const responses = {
     en: {
-      hello: "Hi there! How can I help you today? You can ask about skills, projects, or how to contact Romeo.",
-      skills: "Romeo is proficient in Python, JavaScript, React, and AI Automation (using Gemini/OpenAI APIs). He also builds Web Games and Web3 apps.",
-      projects: "Romeo has built an IT Support Chatbot, an AI Kanban Board, a CCTV Playback Workspace, and a Private Taxi Booking system. Check the 'Projects' section for details!",
-      contact: "You can reach Romeo via GitHub, X (@RoMeoT0T0), or by emailing him directly at the link in the footer.",
+      hello:
+        "Hi there! How can I help you today? You can ask about skills, projects, or how to contact Romeo.",
+      skills:
+        "Romeo is proficient in Python, JavaScript, React, and AI Automation (using Gemini/OpenAI APIs). He also builds Web Games and Web3 apps.",
+      projects:
+        "Romeo has built an IT Support Chatbot, an AI Kanban Board, a CCTV Playback Workspace, and a Private Taxi Booking system. Check the 'Projects' section for details!",
+      contact:
+        "You can reach Romeo via GitHub, X (@RoMeoT0T0), or by emailing him directly at the link in the footer.",
       hire: "Romeo is currently open for focused AI and automation builds! Feel free to reach out via X or GitHub to discuss your project.",
-      default: "I'm not sure about that. Try asking about 'skills', 'projects', or 'hiring'!"
+      default:
+        "I'm not sure about that. Try asking about 'skills', 'projects', or 'hiring'!",
     },
     th: {
-      hello: "สวัสดีครับ! มีอะไรให้ช่วยไหมครับ? สอบถามเรื่องทักษะ, ผลงาน หรือการติดต่อจ้างงานได้เลยครับ",
-      skills: "คุณ Romeo เชี่ยวชาญ Python, JavaScript, React และ AI Automation (Gemini/OpenAI) นอกจากนี้ยังทำเว็บเกมและ Web3 ด้วยครับ",
-      projects: "ผลงานเด่นมีทั้ง แชทบอทไอที, กระดาน Kanban พลัง AI, ระบบจัดการกล้องวงจรปิด และเว็บจองรถแท็กซี่ครับ ดูรายละเอียดได้ที่ส่วน 'ผลงาน' เลย",
-      contact: "ติดต่อคุณ Romeo ได้ทาง GitHub, X (@RoMeoT0T0) หรืออีเมลตามลิงก์ที่ส่วนท้ายหน้าเว็บครับ",
+      hello:
+        "สวัสดีครับ! มีอะไรให้ช่วยไหมครับ? สอบถามเรื่องทักษะ, ผลงาน หรือการติดต่อจ้างงานได้เลยครับ",
+      skills:
+        "คุณ Romeo เชี่ยวชาญ Python, JavaScript, React และ AI Automation (Gemini/OpenAI) นอกจากนี้ยังทำเว็บเกมและ Web3 ด้วยครับ",
+      projects:
+        "ผลงานเด่นมีทั้ง แชทบอทไอที, กระดาน Kanban พลัง AI, ระบบจัดการกล้องวงจรปิด และเว็บจองรถแท็กซี่ครับ ดูรายละเอียดได้ที่ส่วน 'ผลงาน' เลย",
+      contact:
+        "ติดต่อคุณ Romeo ได้ทาง GitHub, X (@RoMeoT0T0) หรืออีเมลตามลิงก์ที่ส่วนท้ายหน้าเว็บครับ",
       hire: "ตอนนี้คุณ Romeo เปิดรับงานพัฒนาระบบ AI และ Automation ครับ! ทักไปคุยรายละเอียดได้ทาง X หรือ GitHub ได้เลย",
-      default: "ผมยังไม่ค่อยเข้าใจคำถามนี้ ลองถามเรื่อง 'ทักษะ', 'ผลงาน' หรือ 'การจ้างงาน' ดูไหมครับ?"
-    }
+      default:
+        "ผมยังไม่ค่อยเข้าใจคำถามนี้ ลองถามเรื่อง 'ทักษะ', 'ผลงาน' หรือ 'การจ้างงาน' ดูไหมครับ?",
+    },
   };
 
-  const addMessage = (text, type = 'bot') => {
-    const msg = document.createElement('div');
+  const addMessage = (text, type = "bot") => {
+    const msg = document.createElement("div");
     msg.className = `ai-msg ai-msg-${type}`;
     msg.innerText = text;
     body.appendChild(msg);
@@ -551,22 +580,39 @@ function initAiAssistant() {
     const text = input.value.trim().toLowerCase();
     if (!text) return;
 
-    addMessage(input.value, 'user');
-    input.value = '';
+    addMessage(input.value, "user");
+    input.value = "";
 
-    const lang = localStorage.getItem('lang') || 'en';
+    const lang = localStorage.getItem("lang") || "en";
     const r = responses[lang];
 
     setTimeout(() => {
-      if (text.includes('hello') || text.includes('hi') || text.includes('ดีครับ') || text.includes('สวัสดี')) {
+      if (
+        text.includes("hello") ||
+        text.includes("hi") ||
+        text.includes("ดีครับ") ||
+        text.includes("สวัสดี")
+      ) {
         addMessage(r.hello);
-      } else if (text.includes('skill') || text.includes('ทักษะ') || text.includes('เก่ง')) {
+      } else if (
+        text.includes("skill") ||
+        text.includes("ทักษะ") ||
+        text.includes("เก่ง")
+      ) {
         addMessage(r.skills);
-      } else if (text.includes('project') || text.includes('ผลงาน') || text.includes('ทำอะไร')) {
+      } else if (
+        text.includes("project") ||
+        text.includes("ผลงาน") ||
+        text.includes("ทำอะไร")
+      ) {
         addMessage(r.projects);
-      } else if (text.includes('contact') || text.includes('ติดต่อ')) {
+      } else if (text.includes("contact") || text.includes("ติดต่อ")) {
         addMessage(r.contact);
-      } else if (text.includes('hire') || text.includes('จ้าง') || text.includes('งาน')) {
+      } else if (
+        text.includes("hire") ||
+        text.includes("จ้าง") ||
+        text.includes("งาน")
+      ) {
         addMessage(r.hire);
       } else {
         addMessage(r.default);
@@ -574,9 +620,8 @@ function initAiAssistant() {
     }, 600);
   };
 
-  send.addEventListener('click', handleSend);
-  input.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') handleSend();
+  send.addEventListener("click", handleSend);
+  input.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") handleSend();
   });
 }
-

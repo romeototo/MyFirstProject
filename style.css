@@ -551,9 +551,15 @@ body {
 }
 
 @keyframes code-window-glow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .code-window:hover {
@@ -693,7 +699,6 @@ body {
     background-position: 200% 0;
   }
 }
-
 
 .scroll-progress {
   position: absolute;
@@ -1575,7 +1580,12 @@ body {
   position: absolute;
   inset: -1px;
   border-radius: 9px;
-  background: linear-gradient(135deg, var(--accent), var(--cyan), var(--accent));
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--cyan),
+    var(--accent)
+  );
   background-size: 300% 300%;
   animation: gradientBorder 6s ease infinite;
   z-index: -1;
@@ -1587,13 +1597,20 @@ body {
   position: absolute;
   inset: 1px;
   border-radius: 7px;
-  background: linear-gradient(135deg, rgba(108, 99, 255, 0.08), rgba(0, 217, 255, 0.045)), rgba(17, 17, 24, 0.92);
+  background:
+    linear-gradient(135deg, rgba(108, 99, 255, 0.08), rgba(0, 217, 255, 0.045)),
+    rgba(17, 17, 24, 0.92);
   z-index: -1;
 }
 
 @keyframes gradientBorder {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .contact-email {
@@ -2073,16 +2090,34 @@ body {
 }
 
 /* Staggered entrance for project cards */
-.project-card:nth-child(1) { transition-delay: 0ms; }
-.project-card:nth-child(2) { transition-delay: 120ms; }
-.project-card:nth-child(3) { transition-delay: 240ms; }
-.project-card:nth-child(4) { transition-delay: 360ms; }
-.project-card:nth-child(5) { transition-delay: 480ms; }
-.project-card:nth-child(6) { transition-delay: 600ms; }
+.project-card:nth-child(1) {
+  transition-delay: 0ms;
+}
+.project-card:nth-child(2) {
+  transition-delay: 120ms;
+}
+.project-card:nth-child(3) {
+  transition-delay: 240ms;
+}
+.project-card:nth-child(4) {
+  transition-delay: 360ms;
+}
+.project-card:nth-child(5) {
+  transition-delay: 480ms;
+}
+.project-card:nth-child(6) {
+  transition-delay: 600ms;
+}
 
-.testimonial-card:nth-child(1) { transition-delay: 0ms; }
-.testimonial-card:nth-child(2) { transition-delay: 150ms; }
-.testimonial-card:nth-child(3) { transition-delay: 300ms; }
+.testimonial-card:nth-child(1) {
+  transition-delay: 0ms;
+}
+.testimonial-card:nth-child(2) {
+  transition-delay: 150ms;
+}
+.testimonial-card:nth-child(3) {
+  transition-delay: 300ms;
+}
 
 /* ======================================
    Utilities & Enhancements
@@ -2235,7 +2270,9 @@ body {
 
 /* Subtle Cursor Glow for hero CTA */
 .btn-primary:hover {
-  box-shadow: 0 0 20px var(--cyan), 0 0 40px rgba(0, 217, 255, 0.2);
+  box-shadow:
+    0 0 20px var(--cyan),
+    0 0 40px rgba(0, 217, 255, 0.2);
 }
 
 /* ======================================
@@ -2289,9 +2326,18 @@ body {
 }
 
 @keyframes pulse-green {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.2); opacity: 0.7; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* AI Assistant Widget */
@@ -2463,8 +2509,14 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* GitHub Activity */

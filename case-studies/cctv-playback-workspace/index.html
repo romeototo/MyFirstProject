@@ -21,19 +21,37 @@
   <body class="case-page">
     <div id="particles" aria-hidden="true"></div>
     <main class="case-shell">
-      <nav class="case-nav" aria-label="Case study navigation" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-        <div style="display: flex; gap: 20px;">
+      <nav
+        class="case-nav"
+        aria-label="Case study navigation"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+        "
+      >
+        <div style="display: flex; gap: 20px">
           <a href="../../#process" data-th="กลับหน้าหลัก">Back to portfolio</a>
-          <a href="../../#contact" data-th="พูดคุยโปรเจกต์คล้ายกัน">Discuss similar work</a>
+          <a href="../../#contact" data-th="พูดคุยโปรเจกต์คล้ายกัน"
+            >Discuss similar work</a
+          >
         </div>
-        <a href="javascript:void(0);" class="nav-link lang-toggle" aria-label="Toggle language to Thai">EN / <span>TH</span></a>
+        <a
+          href="javascript:void(0);"
+          class="nav-link lang-toggle"
+          aria-label="Toggle language to Thai"
+          >EN / <span>TH</span></a
+        >
       </nav>
 
       <section class="case-hero">
         <div>
           <span class="section-tag">// private case study</span>
           <h1 data-th="ระบบดูและจัดการกล้องวงจรปิด">CCTV Playback Workspace</h1>
-          <p data-th="กรณีศึกษาฉบับจำลองของระบบปฏิบัติการส่วนตัว สำหรับดูภาพจากกล้องหลายตัว ค้นหาตามเวลา ดูพรีวิว และดาวน์โหลดคลิปเพื่อใช้เป็นหลักฐาน">
+          <p
+            data-th="กรณีศึกษาฉบับจำลองของระบบปฏิบัติการส่วนตัว สำหรับดูภาพจากกล้องหลายตัว ค้นหาตามเวลา ดูพรีวิว และดาวน์โหลดคลิปเพื่อใช้เป็นหลักฐาน"
+          >
             A sanitized overview of a private operator workspace for reviewing
             multi-camera footage, filtering by time, previewing clips, and
             exporting evidence-ready video segments.
@@ -59,15 +77,21 @@
       <section class="case-metrics" aria-label="Project summary">
         <div>
           <strong data-th="จุดประสงค์">Use case</strong>
-          <span data-th="ระบบตรวจสอบวงจรปิดภายใน">Local CCTV review workflow</span>
+          <span data-th="ระบบตรวจสอบวงจรปิดภายใน"
+            >Local CCTV review workflow</span
+          >
         </div>
         <div>
           <strong data-th="ขั้นตอนหลัก">Core loop</strong>
-          <span data-th="ค้นหา -> พรีวิว -> ดาวน์โหลด">Find footage to preview/export</span>
+          <span data-th="ค้นหา -> พรีวิว -> ดาวน์โหลด"
+            >Find footage to preview/export</span
+          >
         </div>
         <div>
           <strong data-th="การเปิดเผยข้อมูล">Disclosure</strong>
-          <span data-th="ข้อมูลจำลอง (ซอร์สโค้ดเป็นความลับ)">Sanitized; source remains private</span>
+          <span data-th="ข้อมูลจำลอง (ซอร์สโค้ดเป็นความลับ)"
+            >Sanitized; source remains private</span
+          >
         </div>
       </section>
 
@@ -76,7 +100,9 @@
         <div class="case-grid">
           <div class="case-panel">
             <h3 data-th="ปัญหา">Problem</h3>
-            <p data-th="ผู้ปฏิบัติงานต้องการวิธีค้นหาภาพจากกล้องหลายตัวที่รวดเร็วขึ้น โดยไม่ต้องไล่เปิดโฟลเดอร์ทีละอัน หรือทำขั้นตอนการ Export ซ้ำๆ">
+            <p
+              data-th="ผู้ปฏิบัติงานต้องการวิธีค้นหาภาพจากกล้องหลายตัวที่รวดเร็วขึ้น โดยไม่ต้องไล่เปิดโฟลเดอร์ทีละอัน หรือทำขั้นตอนการ Export ซ้ำๆ"
+            >
               Operators needed a faster way to locate footage across several
               cameras without manually hunting through folders, guessing time
               windows, or repeating export steps.
@@ -84,7 +110,9 @@
           </div>
           <div class="case-panel">
             <h3 data-th="สิ่งที่สร้าง">Build</h3>
-            <p data-th="ระบบเน้นที่การฟิลเตอร์วัน/เวลา เลือกล้อง ดูพรีวิว และดาวน์โหลดวิดีโอรวม โดยออกแบบให้ทำงานแบบ Local-first บนเครื่องของผู้ปฏิบัติงานได้เลย">
+            <p
+              data-th="ระบบเน้นที่การฟิลเตอร์วัน/เวลา เลือกล้อง ดูพรีวิว และดาวน์โหลดวิดีโอรวม โดยออกแบบให้ทำงานแบบ Local-first บนเครื่องของผู้ปฏิบัติงานได้เลย"
+            >
               The workspace focuses on day/time filtering, camera selection,
               preview playback, merged clip export, and a local-first workflow
               that can run on the operator machine.
@@ -92,7 +120,9 @@
           </div>
           <div class="case-panel">
             <h3 data-th="ผลลัพธ์">Result</h3>
-            <p data-th="กรณีศึกษานี้แสดงให้เห็นถึงความสามารถในการพัฒนาระบบอัตโนมัติระดับปฏิบัติการ โดยไม่เปิดเผยตำแหน่งกล้อง รหัสผ่าน หรือซอร์สโค้ดที่เป็นความลับ">
+            <p
+              data-th="กรณีศึกษานี้แสดงให้เห็นถึงความสามารถในการพัฒนาระบบอัตโนมัติระดับปฏิบัติการ โดยไม่เปิดเผยตำแหน่งกล้อง รหัสผ่าน หรือซอร์สโค้ดที่เป็นความลับ"
+            >
               The case study demonstrates operational automation experience
               without exposing camera locations, internal paths, recordings, or
               private repository details.
@@ -113,7 +143,8 @@
           </div>
           <div>
             <strong data-th="ความสะดวกของผู้ใช้">Operator ergonomics</strong>
-            <span data-th="เน้นความรวดเร็วในการกรองข้อมูล พรีวิว และตัดสินใจดาวน์โหลด"
+            <span
+              data-th="เน้นความรวดเร็วในการกรองข้อมูล พรีวิว และตัดสินใจดาวน์โหลด"
               >Look for fast filtering, preview, and export decisions.</span
             >
           </div>
@@ -126,7 +157,8 @@
           </div>
           <div>
             <strong data-th="รูปแบบที่นำไปใช้ซ้ำได้">Reusable pattern</strong>
-            <span data-th="รูปแบบนี้สามารถนำไปประยุกต์ใช้กับเครื่องมือปฏิบัติการอื่นๆ ได้"
+            <span
+              data-th="รูปแบบนี้สามารถนำไปประยุกต์ใช้กับเครื่องมือปฏิบัติการอื่นๆ ได้"
               >Apply the same approach to other local operational tools.</span
             >
           </div>
