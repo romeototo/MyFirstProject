@@ -153,9 +153,10 @@
           class="hero-description"
           data-th="แก้ปัญหา IT ในออฟฟิศกรุงเทพมาตั้งแต่ปี 2016 แล้วเริ่มสร้างเครื่องมือที่ช่วยให้ไม่ต้องแก้ปัญหาเดิมซ้ำ — แชทบอตซัพพอร์ต ระบบอัตโนมัติ และเว็บโปรดักต์ที่ใช้งานได้จริง"
         >
-          I've been untangling IT problems in Bangkok offices since 2016.
-          Then I started building the tools that prevent them — support bots,
-          automation flows, and web products that actually ship.
+          I build small tools for office problems that keep coming back:
+          support queues, manual checks, booking flows, and messy handoffs.
+          Each project ships with a live demo, source code, or a reviewable
+          case note.
         </p>
 
         <!-- Status Dashboard -->
@@ -222,7 +223,7 @@
               </svg>
               <span>Book a Call</span>
             </a>
-          </div>
+            <a
               href="#contact"
               class="btn btn-ghost"
               data-th="<span>ติดต่อฉัน</span>"
@@ -234,23 +235,68 @@
         <div class="proof-strip" aria-label="Portfolio summary">
           <div class="proof-item">
             <strong data-count="6">0</strong>
-            <span>shipped projects</span>
+            <span>public builds</span>
           </div>
           <div class="proof-item">
             <strong data-count="8">0</strong>
-            <span>years in IT</span>
+            <span>years fixing IT</span>
           </div>
           <div class="proof-item">
             <strong>1.8K+</strong>
-            <span>X followers</span>
+            <span>people following the work</span>
           </div>
           <div class="proof-item">
             <strong>BKK &#x1F1F9;&#x1F1ED;</strong>
-            <span>based in</span>
+            <span>operator base</span>
           </div>
         </div>
       </div>
       <div class="hero-visual">
+        <div class="workbench-board" aria-label="Recent builds workbench">
+          <div class="workbench-rail">
+            <span>Bangkok workshop</span>
+            <strong>2016 - now</strong>
+          </div>
+          <article class="build-card build-card-main">
+            <img
+              src="assets/projects/it-support-chatbot.webp"
+              alt="IT support chatbot interface"
+              width="1200"
+              height="600"
+            />
+            <div>
+              <span class="build-kicker">Live support flow</span>
+              <h2>Helpdesk answers before the ticket queue grows.</h2>
+            </div>
+          </article>
+          <article class="build-card build-card-small build-card-kanban">
+            <img
+              src="assets/projects/ai-kanban-board.webp"
+              alt="AI Kanban Board interface"
+              width="1200"
+              height="600"
+            />
+            <span>Task split</span>
+          </article>
+          <article class="build-card build-card-small build-card-taxi">
+            <img
+              src="assets/projects/bkk-pattaya-taxi.webp"
+              alt="BKK Pattaya private taxi booking page"
+              width="1200"
+              height="600"
+            />
+            <span>Booking path</span>
+          </article>
+          <div class="bench-note">
+            <span class="note-pin"></span>
+            <p>Built for repeated office jobs: support, routing, booking, and review.</p>
+          </div>
+          <div class="bench-ticket">
+            <span>Today</span>
+            <strong>3 fixes shipped</strong>
+            <small>docs, UI polish, deploy checks</small>
+          </div>
+        </div>
         <div class="code-window">
           <div class="code-header">
             <div class="code-dots">
@@ -335,16 +381,20 @@
     <section class="section section-dark" id="projects">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">// my work</span>
+          <span class="section-tag">// shipped case files</span>
           <h2 class="section-title" data-th="โปรเจกต์เด่น">Selected Work</h2>
           <p
             class="section-intro"
             data-th="รวมโปรเจกต์สาธารณะที่มีเดโม ลิงก์โค้ด และ case study โดยเน้นปัญหาที่แก้และสิ่งที่ผู้รีวิวตรวจสอบได้"
           >
-            A small set of public projects with demos, source links, and
-            case-study notes. The emphasis is on what problem each build solves
-            and what a reviewer can inspect.
+            Public builds grouped like review files: what broke, what shipped,
+            and what a visitor can inspect without asking for a walkthrough.
           </p>
+        </div>
+        <div class="dossier-strip" aria-label="Portfolio review summary">
+          <span>Review packet</span>
+          <strong>6 public builds</strong>
+          <span>Live demos, source links, case notes</span>
         </div>
         <div class="projects-grid">
           <div class="project-card project-featured">
@@ -358,8 +408,13 @@
               />
             </div>
             <div class="project-badge badge-cyan">Support Tool</div>
+            <div class="project-meta">
+              <span>Case 01</span>
+              <span>Live demo</span>
+              <span>Support queue</span>
+            </div>
             <div class="project-icon">🖥️</div>
-            <h3 class="project-name">IT Support AI Chatbot</h3>
+            <h3 class="project-name">IT Support Chatbot</h3>
             <p class="project-desc">
               Helpdesk assistant with structured FAQs, intent matching, and
               ticket categorization. Built to show how repetitive support
@@ -445,10 +500,15 @@
               />
             </div>
             <div class="project-badge badge-purple">Planning Tool</div>
+            <div class="project-meta">
+              <span>Case 02</span>
+              <span>Cloud sync</span>
+              <span>Task breakdown</span>
+            </div>
             <div class="project-icon">📋</div>
-            <h3 class="project-name">AI-Powered Kanban Board</h3>
+            <h3 class="project-name">Kanban Board with Task Breakdown</h3>
             <p class="project-desc">
-              Productivity board with AI task breakdown, real-time cloud sync,
+              Productivity board with guided task breakdown, real-time cloud sync,
               and native drag and drop. Designed for turning rough ideas into
               clearer, smaller next actions.
             </p>
@@ -458,7 +518,7 @@
               <span class="tech-tag">Gemini AI</span>
             </div>
             <div class="project-proof">
-              <span>Inspect: AI task split</span>
+              <span>Inspect: task split</span>
               <span>Cloud sync</span>
               <span>Drag & drop</span>
             </div>
@@ -506,7 +566,7 @@
                 <div>
                   <dt>Build</dt>
                   <dd>
-                    A Kanban board that uses AI to break work into smaller,
+                    A Kanban board that breaks rough work into smaller,
                     trackable tasks.
                   </dd>
                 </div>
@@ -532,6 +592,11 @@
               />
             </div>
             <div class="project-badge">🚕 Web Product</div>
+            <div class="project-meta">
+              <span>Case 03</span>
+              <span>Booking path</span>
+              <span>Local service</span>
+            </div>
             <div class="project-icon">🚕</div>
             <h3 class="project-name">BKK Pattaya Private Taxi</h3>
             <p class="project-desc">
